@@ -1,0 +1,60 @@
+
+// PSKEY_HOST_INTERFACE - USB
+&01f9 = 0002
+
+// PSKEY_USB_MAX_POWER - TODO set correct max power
+&02c6 = 30
+
+// PSKEY_USB_VENDOR_ID - QTIL vendor ID
+&02be = 0a12
+
+// PSKEY_USB_ATTRIBTUES_POWER - Bus powered
+&03f2 = 0000
+
+// --------MODE0-------------------------------------------------------- 
+// BOOTMODE_KEY_LIST_0: Overwrite :                               
+//                                USB_PRODUCT_ID (02bf)  
+//                                ONCHIP_HCI_CLIENT (03cc)
+//                                USB_VM_CONTROL (03c0)
+//                                VM_DISABLE (025d)
+//                                USB_PRODUCT_STRING (02c2)
+//                                USB_DEVICE_CLASS_CODES (2bd)
+&04b0 = 02bf 03cc 03c0 025d 02c2 2bd
+// 
+//  BOOTMODE_KEY_TABLE_0+0: USB_PRODUCT_ID = 0xffff (QTIL Product ID in DFU mode)
+&04b8 = ffff
+//  BOOTMODE_KEY_TABLE_0+1: ONCHIP_HCI_CLIENT = 0
+&04b9 = 0000
+//  BOOTMODE_KEY_TABLE_0+2: USB_VM_CONTROL = 0
+&04ba = 0000
+//  BOOTMODE_KEY_TABLE_0+3: VM_DISABLE = 1
+&04bb = 0001
+//  BOOTMODE_KEY_TABLE_0+4: USB_PRODUCT_STRING = QTIL Audio Dongle DFU
+&04bc = 0051 0054 0049 004c 0020 0041 0075 0064 0069 006f 0020 0044 006f 006e 0067 006c 0065 0020 0044 0046 0055
+//  BOOTMODE_KEY_TABLE_0+5: USB_DEVICE_CLASS_CODES = Bluetooth Programming Interface
+&04bd = 00e0 0001 0001
+
+// --------MODE1-------------------------------------------------------- 
+// BOOTMODE_KEY_LIST_1: 
+//                                USB_PRODUCT_ID (02bf)
+//                                ONCHIP_HCI_CLIENT (03cc)
+//                                USB_VM_CONTROL (03c0)
+//                                VM_DISABLE (025d)
+//                                USB_PRODUCT_STRING (02c2)
+//                                USB_DEVICE_CLASS_CODES (2bd)
+&04b1 = 02bf 03cc 03c0 025d 02c2 2bd
+// 
+// BOOTMODE_KEY_TABLE_1+0: USB_PRODUCT_ID = 0x1004 (QTIL Product ID in Normal Mode)
+&04f8 = 1004
+//  BOOTMODE_KEY_TABLE_1+1: ONCHIP_HCI_CLIENT = 1
+&04f9 = 0001
+//  BOOTMODE_KEY_TABLE_1+2: USB_VM_CONTROL = 1
+&04fa = 0001
+//  BOOTMODE_KEY_TABLE_1+3: VM_DISABLE = 0
+&04fb = 0000
+//  BOOTMODE_KEY_TABLE_1+4: USB_PRODUCT_STRING = QTIL Audio Dongle
+&04fc = 0051 0054 0049 004c 0020 0041 0075 0064 0069 006f 0020 0044 006f 006e 0067 006c 0065
+//  BOOTMODE_KEY_TABLE_1+5: USB_DEVICE_CLASS_CODES = Application specific
+&04fd = 0000 0000 0000
+
+

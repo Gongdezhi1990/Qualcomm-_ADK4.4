@@ -1,0 +1,9 @@
+ \
+ local_device/default/BlueLab-7.4-Release/assisted/local_device_ble_tx_power.o:  \
+ local_device/local_device_ble_tx_power.c \
+  local_device/local_device_ble_tx_power.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h
+
+local_device/local_device_ble_tx_power.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:

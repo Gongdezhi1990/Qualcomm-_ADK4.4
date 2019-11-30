@@ -1,0 +1,5 @@
+<help>
+    <page name="SDK Support Documentation" path="../../doc/support/index.html"/>
+	<page name="VM and Native Reference Guide" path="../../doc/reference/html/index.html"/>
+	<page name="Kalimba DSP Reference Guide" path="../../doc/dsp/html/index.html"/>
+</help>

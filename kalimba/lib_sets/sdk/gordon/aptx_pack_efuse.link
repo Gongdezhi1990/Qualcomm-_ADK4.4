@@ -1,0 +1,24 @@
+/* Linkscript for the aptX library */
+segment APTX_PM                                                40          PM_REGION, flash.code;
+segment APTXENC_PM                                             40          PM_REGION, flash.code;
+segment APTXDEC_PM                                             40          PM_REGION, flash.code;
+
+/* Must put these in PM at all cost to avoid excessive MIPS */
+segment APTX_SEG_1_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_2_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_3_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_4_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_5_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_6_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_7_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_8_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_9_PM                                          25          PM_REGION, flash.code;
+segment APTX_SEG_10_PM                                         25          PM_REGION, flash.code;
+
+/* Security segments */
+segment SECURITY_SET_PRODUCTID_PM                              1000        PM_REGION, flash.code;
+segment SECURITY_START_PM                                      1000        PM_REGION, flash.code;
+segment SECURITY_PSKEYREADHANDLER_PM                           1000        PM_REGION, flash.code;
+segment SECURITY_TEST                                          1000        PM_REGION, flash.code;
+segment SECURITY_SET_SECURITY_PSKEY_PM                         1000        PM_REGION, flash.code;
+

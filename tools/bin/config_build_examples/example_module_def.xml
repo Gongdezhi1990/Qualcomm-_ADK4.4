@@ -1,0 +1,2054 @@
+<?xml version="1.0"?>
+<ModuleData Name="Module_1">
+    <DefineGroup>
+        <!-- Example definition that will be merged with 
+            a DefineList in the globals file 
+        -->
+        <DefineList
+            Id="User Event"
+            ShortId="g_user_event">
+            <enum key="Test Module Event A" value="0x32" />
+            <enum key="Test Module Event B" value="0x33" />
+            <enum key="Test Module Event C" value="0x34" />
+            <enum key="Test Module Event D" value="0x35" />
+        </DefineList>
+        
+        <!-- Examples of locally defined DefineLists that are
+            used by items in this config
+        -->
+        <DefineList
+            Id="Bitfield"
+            ShortId="m1_bitfields">
+            <bitfield key="Bitfield A" value="0" />
+            <bitfield key="Bitfield B" value="1" />
+            <bitfield key="Bitfield C" value="2" />
+            <bitfield key="Bitfield D" value="3" />
+        </DefineList>
+        
+        <DefineList
+            Id="Options"
+            ShortId="m1_options">
+            <enum key="Option A" value="0x01" />
+            <enum key="Option B" value="0x02" />
+            <enum key="Option C" value="0x03" />
+            <enum key="Option D" value="0x04" />
+        </DefineList>
+        
+        <!-- Examples of locally defined DefinePatterns that are
+            used by items in this config
+        -->
+        <DefinePattern 
+            PatternName="Module1 Example Pattern A"
+            ShortId="m1_example_pattern_a">
+            <ConfigItem
+                Id="Pattern A uint"
+                ShortId="pattern_a_uint"
+                Desc="Pattern uint example."
+                Type="uint"
+                Size="16" />
+            <ConfigItem
+                Id="Pattern A int"
+                ShortId="pattern_a_int"
+                Desc="Pattern int example."
+                Type="int"
+                Size="16" />
+            <ConfigItem
+                Id="Pattern A ulong"
+                ShortId="pattern_a_ulong"
+                Desc="Pattern ulong example."
+                Type="ulong"
+                Size="32" />
+            <ConfigItem
+                Id="Pattern A Options"
+                ShortId="pattern_a_options"
+                Desc="Option bitfield mask example."
+                Type="bitfield"
+                PresentHex="true"
+                Size="5">
+                <bitfield key="Tickbox A" value="0" />
+                <bitfield key="Tickbox B" value="1" />
+                <bitfield key="Tickbox C" value="2" />
+                <bitfield key="Tickbox D" value="3" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Pattern A bool"
+                ShortId="pattern_a_bool"
+                Desc="Boolean example."
+                Type="bool"
+                Size="1" />
+        </DefinePattern>
+ 
+        <DefinePattern 
+            PatternName="Module1 Example Pattern with Config Array"
+            ShortId="m1_array_pattern_a">
+            <ConfigItem
+                Id="Pattern Index"
+                ShortId="pattern_a_index"
+                Desc="Pattern index example."
+                Type="uint"
+                Size="16" />
+            <ConfigArray
+                Id="Pattern Array of uint"
+                ShortId="pattern_embedded_array_uint"
+                Desc="Example use of a uint array in a pattern"
+                Type="array"
+                ElementType="uint"
+                ArraySize="4" />
+            <ConfigItem
+                Id="Pattern Bool"
+                ShortId="pattern_a_bool"
+                Desc="Boolean example."
+                Type="bool"
+                Size="1" />
+            <ConfigArray
+                Id="Pattern Array of bitfield"
+                ShortId="pattern_embedded_array_bitfield"
+                Desc="Example use of a bitfield array in a pattern"
+                Type="array"
+                ElementType="bitfield"
+                ArraySize="3" >
+                <bitfield key="Array bitfield 60" value="0x8" />
+                <List use="m1_bitfields" />
+                <bitfield key="Array bitfield 80" value="0xa" />
+            </ConfigArray>
+            <ConfigArray
+                Id="Pattern Array of enum"
+                ShortId="pattern_embedded_array_enum"
+                Desc="Example use of a enum array in a pattern"
+                Type="array"
+                ElementType="enum"
+                ArraySize="4" >
+                <enum key="Array enum 10" value="0x41" />
+                <List use="m1_options" />
+                <enum key="Array enum 30" value="0x44" />
+                <List use="g_user_event" />
+                <enum key="Array enum 50" value="0x47" />
+            </ConfigArray>
+        </DefinePattern>
+        
+        <DefineStruct 
+            Id="Embedded Struct Level2" 
+            ShortId="m1_embedded_lvl2">
+            <ConfigItem 
+                Id="Embedded Struct Level2 Item A" 
+                ShortId="embedded_lvl2_item_a" 
+                Desc="Embedded struct uint" 
+                Type="uint" 
+                Size="16"/>
+            <ConfigItem
+                Id="Embedded Struct Level2 Item B"
+                ShortId="embedded_lvl2_item_b"
+                Desc="Embedded struct int"
+                Type="int"
+                Size="16"/>
+            <ConfigItem
+                Id="Embedded Struct Level2 Item C"
+                ShortId="embedded_lvl2_item_c"
+                Desc="Embedded struct ulong"
+                Type="ulong"
+                Size="32"/>
+            <ConfigItem 
+                Id="Embedded Struct Level2 Item D" 
+                ShortId="embedded_lvl2_item_d" 
+                Desc="Embedded struct bitfield" 
+                Type="bitfield" 
+                Size="5">
+                <bitfield key="Tickbox A" value="0" />
+                <bitfield key="Tickbox B" value="1" />
+                <bitfield key="Tickbox C" value="2" />
+                <bitfield key="Tickbox D" value="3" />
+            </ConfigItem>
+            <ConfigItem 
+                Id="Embedded Struct Level2 Item E" 
+                ShortId="embedded_lvl2_item_e" 
+                Desc="Embedded struct enum" 
+                Type="enum" 
+                Size="3">
+                <List use="m1_options" />
+            </ConfigItem>
+            <ConfigItem 
+                Id="Embedded Struct Level2 Item F" 
+                ShortId="embedded_lvl2_item_f" 
+                Desc="Embedded struct bool" 
+                Type="bool" 
+                Size="1"/>
+            <ConfigItem 
+                Id="Embedded Struct Level2 Item G" 
+                ShortId="embedded_lvl2_item_g" 
+                Desc="Embedded struct string" 
+                Type="AsciiString" 
+                MaxStrLenBytes="20"/>
+        </DefineStruct>
+        
+        <DefineStruct
+            Id="Embedded Struct Level1"
+            ShortId="m1_embedded_lvl1">
+            <ConfigItem
+                Id="Embedded Struct Level1 Item A"
+                ShortId="embedded_lvl1_item_a"
+                Desc="Embedded struct uint"
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Embedded Struct Level1 Item B"
+                ShortId="embedded_lvl1_item_b"
+                Desc="Embedded struct bitfield"
+                Type="bitfield"
+                Size="5">
+                <bitfield key="Tickbox A" value="0" />
+                <bitfield key="Tickbox B" value="1" />
+                <bitfield key="Tickbox C" value="2" />
+                <bitfield key="Tickbox D" value="3" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Embedded Struct Level1 Item C"
+                ShortId="embedded_lvl1_item_c"
+                Desc="Embedded struct enum"
+                Type="enum"
+                Size="3">
+                <List use="m1_options" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Embedded Struct Level1 Item D"
+                ShortId="embedded_lvl1_item_d"
+                Desc="Struct example bool"
+                Type="bool"
+                Size="1"/>
+            <ConfigStruct
+                Id="Embedded Struct Level1 Item E"
+                ShortId="embedded_lvl1_item_e"
+                Desc="Example use of a structure"
+                Type="struct"
+                Struct="m1_embedded_lvl2"/>
+            <ConfigItem
+                Id="Embedded Struct Level1 Item E"
+                ShortId="embedded_lvl2_item_f"
+                Desc="Struct example string"
+                Type="AsciiString"
+                MaxStrLenBytes="20"/>
+        </DefineStruct>        
+ 
+        <DefineStruct
+            Id="Struct with embedded array"
+            ShortId="struct_embbeded_array" >
+            <ConfigItem
+                Id="Struct with embedded array item A"
+                ShortId="struct_embedded_array_item_a"
+                Desc="Struct with embedded array item A"
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Struct with embedded array item B"
+                ShortId="struct_embedded_array_item_b"
+                Desc="Struct with embedded array item B"
+                Type="uint"
+                Size="8"/>
+            <ConfigArray
+                Id="Struct embedded array"
+                ShortId="embedded_array"
+                Desc="Struct embedded array"
+                Type="array"
+                ElementType="uint"
+                ArraySize="2" />
+        </DefineStruct> 
+
+        <DefineStruct
+            Id="Basic Struct"
+            ShortId="basic_struct" >
+            <ConfigItem
+                Id="Basic Struct item A"
+                ShortId="basic_struct_item_a"
+                Desc="Basic Struct item A desc"
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Basic Struct item B"
+                ShortId="basic_struct_item_b"
+                Desc="Basic Struct item B desc"
+                Type="uint"
+                Size="8"/>
+            <ConfigItem
+                Id="Basic Struct item C"
+                ShortId="basic_struct_item_c"
+                Desc="Basic Struct item C desc"
+                Type="uint"
+                Size="3"/>
+        </DefineStruct> 
+
+        <DefineStruct
+            Id="Embedded Pattern Struct Level1"
+            ShortId="m1_pat_struct_lvl1">
+            <ConfigItem
+                Id="Pattern Struct Level1 Item A"
+                ShortId="pat_struct_lvl1_item_a"
+                Desc="Embedded struct uint"
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Pattern Struct Level1 Item B"
+                ShortId="pat_struct_lvl1_item_b"
+                Desc="Embedded struct bitfield"
+                Type="bitfield"
+                Size="5">
+                <bitfield key="Tickbox A" value="0" />
+                <bitfield key="Tickbox B" value="1" />
+                <bitfield key="Tickbox C" value="2" />
+                <bitfield key="Tickbox D" value="3" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Pattern Struct Level1 Item C"
+                ShortId="pat_struct_lvl1_item_c"
+                Desc="Embedded struct enum"
+                Type="enum"
+                Size="3">
+                <List use="m1_options" />
+            </ConfigItem>
+            <ConfigStruct
+                Id="Pattern Struct Level1 Item D"
+                ShortId="pat_struct_lvl1_item_d"
+                Desc="Embedded struct in struct"
+                Type="struct"
+                Struct="m1_pat_struct_lvl2"/>
+            <ConfigItem
+                Id="Embedded Struct Level1 Item E"
+                ShortId="pat_struct_lvl1_item_e"
+                Desc="Embedded struct bool"
+                Type="bool"
+                Size="1"/>
+        </DefineStruct>        
+
+        <DefineStruct 
+            Id="Embedded Pattern Struct Level2" 
+            ShortId="m1_pat_struct_lvl2">
+            <ConfigItem 
+                Id="Embedded Pattern Struct Level2 Item A" 
+                ShortId="pat_struct_lvl2_item_a" 
+                Desc="Embedded pattern struct uint" 
+                Type="uint" 
+                Size="16"/>
+            <ConfigItem 
+                Id="Embedded Pattern Struct Level2 Item B" 
+                ShortId="pat_struct_lvl2_item_b" 
+                Desc="Embedded pattern struct bitfield" 
+                Type="bitfield" 
+                Size="5">
+                <bitfield key="Tickbox A" value="0" />
+                <bitfield key="Tickbox B" value="1" />
+                <bitfield key="Tickbox C" value="2" />
+                <bitfield key="Tickbox D" value="3" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Embedded Struct Level2 Item C"
+                ShortId="pat_struct_lvl2_item_c"
+                Desc="Embedded pattern struct enum"
+                Type="enum"
+                Size="3">
+                <List use="m1_options" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Embedded Struct Level2 Item D"
+                ShortId="pat_struct_lvl2_item_d"
+                Desc="Embedded pattern struct bool"
+                Type="bool"
+                Size="1"/>
+        </DefineStruct>
+
+        <DefinePattern 
+            PatternName="Module1 Example Pattern with Config Struct"
+            ShortId="m1_pattern_array_struct_b">
+            <ConfigItem 
+                Id="Pattern Array Struct B Uint" 
+                ShortId="pattern_array_struct_b_uint" 
+                Desc="Pattern Array Struct B Uint" 
+                Type="uint" 
+                Size="16" />
+            <ConfigStruct 
+                Id="Pattern Array Struct B Struct" 
+                ShortId="pattern_array_struct_b_struct" 
+                Desc="Pattern Array Struct B struct" 
+                Type="struct" 
+                Struct="m1_pat_struct_lvl1"/>
+            <ConfigItem 
+                Id="Pattern Array Struct B Bool" 
+                ShortId="pattern_array_struct_b_bool" 
+                Desc="Boolean example." 
+                Type="bool" 
+                Size="1" />
+        </DefinePattern>
+        
+        <DefinePattern 
+            PatternName="Example Enum Disabler"
+            ShortId="m1_enum_disabler">
+            <ConfigItem
+                Id="Filter Type"
+                ShortId="filter_type"
+                Desc="Set the Filter"
+                Type="enum_disabler"
+                Size="3">
+                <enum key="DISABLE ALL"
+                      value="0"
+                      disable="LED to Use,Follow LED Delay"/>
+                <enum key="LED USE"
+                      value="1"
+                      disable="Follow LED Delay"/>
+                <enum key="LED DELAY"
+                      value="2"
+                      disable="LED to Use"/>
+                <enum key="ALL"
+                      value="3"
+                      disable=""/>
+            </ConfigItem>
+            <ConfigItem
+                Id="LED to Use"
+                ShortId="led_to_use"
+                Desc="LED to use option"
+                Type="enum"
+                Size="3">
+                <List use="m1_options"/>
+            </ConfigItem>
+            <ConfigItem
+                Id="Follow LED Delay"
+                ShortId="follow_led_delay"
+                Desc="Defines the time offset in ms between the original pattern flashes and FOLLOW filter pattern flashes, when it is active (in 50ms steps)."
+                Type="uint"
+                Size="16" />
+        </DefinePattern>
+        
+    </DefineGroup>
+    <!--
+        Example of each of the different types supported
+    -->
+    <ConfigGroup
+            Id="Group V"
+            ShortId="m1_group_v"
+            Node="Basic">
+        <!-- Example uint
+            Unsigned Integer 8 Bits
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item A"
+            ShortId="m1_groupv_itema"
+            Desc="First item in group V"
+            Type="uint"
+            Size="8"
+            DefaultValue="0x11" />
+
+        <!-- Example int
+            Signed Integer 8 Bits
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item B"
+            ShortId="m1_groupv_itemb"
+            Desc="Second item in group V"
+            Type="int"
+            Size="8"
+            DefaultValue="0x11" />
+
+        <!-- Example ulong
+            Unsigned Long Integer 16 Bits
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item C"
+            ShortId="m1_groupv_itemc"
+            Desc="Third item in group V"
+            Type="ulong"
+            Size="32"
+            DefaultValue="0x5a" />
+
+        <!-- Example uint
+            Unsigned Integer 16 Bits
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item D"
+            ShortId="m1_groupv_itemd"
+            Desc="Fourth item in group V"
+            Type="uint"
+            Size="16"
+            DefaultValue="0x11" />
+
+        <!-- Example int
+            Signed Integer 16 Bits
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item E"
+            ShortId="m1_groupv_iteme"
+            Desc="Fifth item in group V"
+            Type="int"
+            Size="16"
+            DefaultValue="0x11" />
+
+        <!-- Example int
+            Unsigned long
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item F"
+            ShortId="m1_groupv_itemf"
+            Desc="Sixth item in group V"
+            Type="ulong"
+            Size="32"
+            DefaultValue="0xacdcba98" />
+
+        <!-- Example bool
+            Boolean
+            Flag indicating TRUE or FALSE
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item G"
+            ShortId="m1_groupv_itemg"
+            Desc="Seventh item in group V"
+            Type="bool"
+            Size="1"
+            DefaultValue="true" />
+            
+        <!-- Example Packed ASCII String
+            Two (8bit) characters packed into 
+            one (16bit) word. 
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item H"
+            ShortId="m1_groupv_itemh"
+            Desc="Eighth item in group V"
+            Type="AsciiString"
+            MaxStrLenBytes="32"
+            DefaultValue="Test Message" />
+
+        <!-- Example bitfield
+            Bitfield with options defined in ConfigItem.
+            In the Config Tool a bitfield is represented
+            as a list of tickboxes.
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item I"
+            ShortId="m1_groupv_itemi"
+            Desc="Ninth item in group V"
+            Type="bitfield"
+            Size="2"
+            DefaultValue="2">
+            <bitfield key="AAC"
+                      value="1"/>
+            <bitfield key="MP3"
+                      value="2"/>
+        </ConfigItem>
+                
+        <!-- Example enum
+            Enumeration with options defined in ConfigItem.
+            In the Config Tool an enum is represented
+            as a combo box.
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item J"
+            ShortId="m1_groupv_itemj"
+            Desc="Tenth item in group V"
+            Type="enum"
+            Size="4"
+            DefaultValue="0x04">
+            <enum key="Zero"
+                  value="0"/>
+            <enum key="One"
+                  value="1"/>
+            <enum key="Two"
+                  value="2"/>
+            <enum key="Three"
+                  value="3"/>
+            <enum key="Four"
+                  value="4"/>
+            <enum key="Five"
+                  value="5"/>
+        </ConfigItem>
+
+        <!-- Example enum
+            Enumeration with options 
+            referenced from a List in the
+            DefineGroup section.
+            In the Config Tool an enum is
+            represented as a combo box
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item K"
+            ShortId="m1_groupv_itemk"
+            Desc="Eleventh item in group V"
+            Type="enum"
+            Size="3"
+            DefaultValue="0x01">
+            <List use="m1_options"/>
+        </ConfigItem>
+        
+        <!-- Example enum 16bit
+            Enumeration with options defined
+            in ConfigItem.
+            In the Config Tool an enum is
+            represented as a combo box
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item L"
+            ShortId="m1_groupv_iteml"
+            Desc="Twelvth item in group V"
+            Type="enum"
+            Size="16"
+            DefaultValue="0x01">
+            <enum key="A"
+                  value="0"/>
+            <enum key="B"
+                  value="1"/>
+            <enum key="C"
+                  value="2"/>
+            <enum key="D"
+                  value="4"/>
+            <enum key="E"
+                  value="8"/>
+            <enum key="F"
+                  value="16"/>
+            <enum key="G"
+                  value="32"/>
+            <enum key="H"
+                  value="64"/>
+            <enum key="I"
+                  value="128"/>
+            <enum key="J"
+                  value="256"/>
+            <enum key="K"
+                  value="512"/>
+            <enum key="L"
+                  value="1024"/>
+        </ConfigItem>
+
+        <!-- Example bitfield 16bit
+            Bitfield with options defined
+            in ConfigItem.
+            In the Config Tool a bitfield 
+            is represented as a list of 
+            tickboxes.
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item M"
+            ShortId="m1_groupv_itemm"
+            Desc="Thirteenth item in group V"
+            Type="bitfield"
+            Size="16"
+            DefaultValue="2">
+            <bitfield key="Slow"
+                      value="0"/>
+            <bitfield key="Medium"
+                      value="1"/>
+            <bitfield key="Fast"
+                      value="2"/>
+
+        </ConfigItem>
+        <!-- Example bitfield
+            Bitfield with options 
+            referenced from a List in the
+            DefineGroup section.
+            In the Config Tool a bitfield is
+            represented as a combo box
+        -->
+        <ConfigItem
+            Id="Module 1 - Group V Item N"
+            ShortId="m1_groupv_itemn"
+            Desc="Fourteenth item in group V"
+            Type="bitfield"
+            Size="2"
+            DefaultValue="0x01">
+            <List use="m1_bitfields"/>
+        </ConfigItem>
+    </ConfigGroup>
+    
+    <!--
+        Examples of Pattern Arrays 
+    -->
+    <ConfigGroup
+        Id="Group W"
+        ShortId="m1_group_w"
+        Node="Array">
+        <!--
+            Example of array referencing a
+            pattern defined in the Module
+            ConfigDefine section
+        -->
+        <ConfigPatternArray
+            Id="Module 1 - Group W Item A"
+            ShortId="m1_groupw_itema"
+            Pattern="m1_example_pattern_a"
+            FixedNumPatterns="2">
+            <PatternArrayRow
+                Id="Group W Row1"
+                ShortId="group_w1"
+                Node="Basic">
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupw_itema_r1c1"
+                    DefaultValue="1" />
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupw_itema_r1c2"
+                    DefaultValue="33" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r1c3"
+                    DefaultValue="0x12345678" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r1c4"
+                    DefaultValue="2" />
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupw_itema_r1c5"
+                    DefaultValue="True" />
+            </PatternArrayRow>
+            <PatternArrayRow
+                Id="Group W Row2"
+                ShortId="group_w2"
+                Node="Basic">
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r2c1"
+                    DefaultValue="2" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r2c2"
+                    DefaultValue="44" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r2c3"
+                    DefaultValue="0x87654321" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r2c4"
+                    DefaultValue="3" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r2c5"
+                    DefaultValue="False" />
+            </PatternArrayRow>
+        </ConfigPatternArray>
+    </ConfigGroup>
+    
+    <!--
+        Examples of Pattern Arrays 
+    -->
+    <ConfigGroup
+        Id="Group X"
+        ShortId="m1_group_x"
+        Node="Array" >
+        <!--
+            Example of array referencing a
+            pattern defined in the Module
+            ConfigDefine section
+        -->
+        <ConfigPatternArray
+            Id="Module 1 - Group X Item A"
+            ShortId="m1_groupx_itema"
+            Pattern="m1_example_pattern_a"
+            MaxNumPatterns="33">
+            <PatternArrayRow
+                Id="Group X Row1"
+                ShortId="group_x1"
+                Node="Basic">
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupx_itema_r1c1"
+                    DefaultValue="1" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r1c2"
+                    DefaultValue="55" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r1c3"
+                    DefaultValue="0xa2345678" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r1c4"
+                    DefaultValue="2" />
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupx_itema_r1c5"
+                    DefaultValue="True" />
+            </PatternArrayRow>
+            <PatternArrayRow
+                Id="Group X Row2"
+                ShortId="group_x2"
+                Node="Basic">
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r2c1"
+                    DefaultValue="2" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r2c2"
+                    DefaultValue="66" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r2c3"
+                    DefaultValue="0xa7654321" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupw_itema_r2c4"
+                    DefaultValue="3" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupx_itema_r2c5"
+                    DefaultValue="False" />
+            </PatternArrayRow>
+        </ConfigPatternArray>
+    </ConfigGroup>
+    
+    <!--
+        Example of structured storage
+    -->
+    <ConfigGroup
+        Id="Group Y"
+        ShortId="m1_group_y"
+        Node="Basic">
+        <ConfigGroup
+            Id="Group Y-A"
+            ShortId="m1_group_y_a"
+            Node="Basic">
+            <ConfigItem
+                Id="Module 1 - Group Y-A Item A"
+                ShortId="m1_groupx_itemy_a"
+                Desc="First item in group Y-A"
+                Type="uint"
+                Size="8"
+                DefaultValue="0x55" />
+            <ConfigItem
+                Id="Module 1 - Group Y-A Item B"
+                ShortId="m1_groupx_itemy_b"
+                Desc="Second item in group Y-B"
+                Type="uint"
+                Size="8"
+                DefaultValue="0x66" />
+        </ConfigGroup>
+        <ConfigItem
+            Id="Module 1 - Group Y Item C"
+            ShortId="m1_groupx_itemc"
+            Desc="Third item in group Y"
+            Type="uint"
+            Size="8"
+            DefaultValue="0x77" />
+    </ConfigGroup>
+    
+    <!--
+        Example Config Struct
+    -->
+    <ConfigGroup
+        Id="Group Z"
+        ShortId="m1_group_z"
+        Node="Basic" >
+        <ConfigStruct
+            Id="M1 Group Z Struct A"
+            ShortId="m1_groupz_structa"
+            Desc="Example use of a structure"
+            Type="struct"
+            Struct="m1_embedded_lvl1" >
+            <StructElementConfigItem 
+                Id="Group Z Struct A Item A"
+                ShortId="m1_grpz_structa_itema" 
+                Desc="Group Z Struct A Item A Desc"
+                DefaultValue="0xaaaa"/>
+            <StructElementConfigItem 
+                Id="Group Z Struct A Item B"
+                ShortId="m1_grpz_structa_itemb" 
+                Desc="Group Z Struct A Item B Desc"
+                DefaultValue="2"/>
+            <StructElementConfigItem 
+                Id="Group Z Struct A Item C"
+                ShortId="m1_grpz_structa_itemc" 
+                Desc="Group Z Struct A Item C Desc"
+                DefaultValue="3"/>
+            <StructElementConfigItem 
+                Id="Group Z Struct A Item D"
+                ShortId="m1_grpz_structa_itemd" 
+                Desc="Group Z Struct A Item D Desc"
+                DefaultValue="true"/>
+            <StructElementConfigItem 
+                Id="Group Z Struct A Item E"
+                ShortId="m1_grpz_structa_iteme"
+                Desc="Group Z Struct A Item E Desc">
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item A"
+                    ShortId="m1_grpz_structb_itema" 
+                    Desc="Group Z Struct B Item A Desc"
+                    DefaultValue="0xbbbb"/>
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item B"
+                    ShortId="m1_grpz_structb_itemb" 
+                    Desc="Group Z Struct B Item B Desc"
+                    DefaultValue="-42"/>
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item C"
+                    ShortId="m1_grpz_structb_itemc" 
+                    Desc="Group Z Struct B Item C Desc"
+                    DefaultValue="0xfcdcba98"/>
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item D"
+                    ShortId="m1_grpz_structb_itemd" 
+                    Desc="Group Z Struct B Item D Desc"
+                    DefaultValue="3"/>
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item E"
+                    ShortId="m1_grpz_structb_iteme" 
+                    Desc="Group Z Struct B Item E Desc"
+                    DefaultValue="2"/>
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item F"
+                    ShortId="m1_grpz_structb_itemf" 
+                    Desc="Group Z Struct B Item F Desc"
+                    DefaultValue="false"/>
+                <StructElementConfigItem 
+                    Id="Group Z Struct B Item G"
+                    ShortId="m1_grpz_structb_itemg" 
+                    Desc="Group Z Struct B Item G Desc"
+                    DefaultValue="Level2"/>
+            </StructElementConfigItem>
+            <StructElementConfigItem 
+                Id="Group Z Struct A Item F"
+                ShortId="m1_grpz_structa_itemf" 
+                Desc="Group Z Struct A Item F Desc"
+                DefaultValue="Level1"/>
+        </ConfigStruct>
+    </ConfigGroup>
+
+    <!--
+        Examples using the ConfigGroupPath argument
+    -->
+    <ConfigGroup
+        Id="Group CGP"
+        ShortId="m1_group_cgp"
+        Node="Basic" >
+        <ConfigItem
+            Id="Module 1 - Group CGP Item A"
+            ShortId="m1_groupcgp_item_a"
+            Desc="First item in group CGP"
+            Type="uint"
+            Size="8"
+            DefaultValue="0x88"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_uint']" />
+        <ConfigItem
+            Id="Module 1 - Group CGP Item B"
+            ShortId="m1_groupcgp_item_b"
+            Desc="Second item in group CGP"
+            Type="int"
+            Size="8"
+            DefaultValue="0x78"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_int']" />
+        <ConfigItem
+            Id="Module 1 - Group CGP Item C"
+            ShortId="m1_groupcgp_item_c"
+            Desc="Third item in group CGP"
+            Type="ulong"
+            Size="32"
+            DefaultValue="0x88"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_ulong']" />
+        <ConfigItem
+            Id="Module 1 - Group CGP Item D"
+            ShortId="m1_groupcgp_item_d"
+            Desc="Fourth item in group CGP"
+            Type="bool"
+            Size="1"
+            DefaultValue="true"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_bool']"/>
+        <ConfigItem
+            Id="Module 1 - Group CGP Item E"
+            ShortId="m1_groupcgp_item_e"
+            Desc="Fifth item in group CGP"
+            Type="enum"
+            Size="8"
+            DefaultValue="0x99"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_enum']">
+            <List use="m1_options"/>
+        </ConfigItem>
+        <ConfigItem
+            Id="Module 1 - Group CGP Item F"
+            ShortId="m1_groupcgp_item_f"
+            Desc="Sixth item in group CGP"
+            Type="bitfield"
+            Size="8"
+            DefaultValue="0x99"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_bitfield']">
+            <bitfield key="Tickbox A" value="0" />
+            <bitfield key="Tickbox B" value="1" />
+            <bitfield key="Tickbox C" value="2" />
+            <bitfield key="Tickbox D" value="3" />
+        </ConfigItem>
+        <ConfigItem
+            Id="Module 1 - Group CGP Item G"
+            ShortId="m1_groupcgp_item_g"
+            Desc="Seventh item in group CGP"
+            Type="AsciiString"
+            MaxStrLenBytes="16"
+            DefaultValue="Hello From Here"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_string']"/>
+        <ConfigStruct
+            Id="Module 1 - Group CGP Struct"
+            ShortId="m1_groupcgp_structure"
+            Desc="Struct item in group CGP"
+            Type="struct"
+            Struct="m1_embedded_lvl1"
+            ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_struct']" >
+            <StructElementConfigItem 
+                Id="Group CGP Struct A Item A"
+                ShortId="m1_grpcgp_structa_itema" 
+                Desc="Group CGP Struct A Item A Desc"
+                DefaultValue="0xaaaa"/>
+            <StructElementConfigItem 
+                Id="Group CGP Struct A Item B"
+                ShortId="m1_grpcgp_structa_itemb" 
+                Desc="Group CGP Struct A Item B Desc"
+                DefaultValue="2"/>
+            <StructElementConfigItem 
+                Id="Group CGP Struct A Item C"
+                ShortId="m1_grpcgp_structa_itemc" 
+                Desc="Group CGP Struct A Item C Desc"
+                DefaultValue="3"/>
+            <StructElementConfigItem 
+                Id="Group CGP Struct A Item D"
+                ShortId="m1_grpcgp_structa_itemd" 
+                Desc="Group CGP Struct A Item D Desc"
+                DefaultValue="true"/>
+            <StructElementConfigItem 
+                Id="Group CGP Struct A Item E"
+                ShortId="m1_grpcgp_structa_iteme"
+                Desc="Group CGP Struct A Item E Desc">
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item A"
+                    ShortId="m1_grpcgp_structb_itema" 
+                    Desc="Group CGP Struct B Item A Desc"
+                    DefaultValue="0xfcdc"/>
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item B"
+                    ShortId="m1_grpcgp_structb_itemb" 
+                    Desc="Group CGP Struct B Item B Desc"
+                    DefaultValue="-42"/>
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item C"
+                    ShortId="m1_grpcgp_structb_itemc" 
+                    Desc="Group CGP Struct B Item C Desc"
+                    DefaultValue="0xfcdcba98"/>
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item D"
+                    ShortId="m1_grpcgp_structb_itemd" 
+                    Desc="Group CGP Struct B Item D Desc"
+                    DefaultValue="3"/>
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item E"
+                    ShortId="m1_grpcgp_structb_iteme" 
+                    Desc="Group CGP Struct B Item E Desc"
+                    DefaultValue="2"
+                    ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_struct_parts']"/>
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item F"
+                    ShortId="m1_grpcgp_structb_itemf" 
+                    Desc="Group CGP Struct B Item F Desc"
+                    DefaultValue="false"
+                    ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_struct_parts']"/>
+                <StructElementConfigItem 
+                    Id="Group CGP Struct B Item G"
+                    ShortId="m1_grpcgp_structb_itemg" 
+                    Desc="Group CGP Struct B Item G Desc"
+                    DefaultValue="Level2"
+                    ConfigGroupPath="./[@ShortId='level_1']/[@ShortId='level_2']/[@ShortId='level_3']/[@ShortId='target_for_struct_parts']"/>
+            </StructElementConfigItem>
+            <StructElementConfigItem 
+                Id="Group CGP Struct A Item F"
+                ShortId="m1_grpcgp_structa_itemf" 
+                Desc="Group CGP Struct A Item F Desc"
+                DefaultValue="Level1"/>
+        </ConfigStruct>
+
+        <!--
+            Multiple depth nested ConfigGroupPaths with uint ConfigItem to ensure persistence in the resulting config set.
+        -->
+        <ConfigGroup
+            Id="Group CGPm1"
+            ShortId="m1_group_cgpm1"
+            Node="Basic"
+            ConfigGroupPath="./[@ShortId='n1_0_0']/[@ShortId='n1_1_0']/[@ShortId='n1_1_1']" >
+            <ConfigItem
+                Id="Module 1 - Group CGPm1 Item"
+                ShortId="m1_groupcgpm1_item"
+                Desc="Item in group CGPm1"
+                Type="uint"
+                Size="8"
+                DefaultValue="0x88"/>
+            <ConfigGroup
+                Id="Group CGPm1.1"
+                ShortId="m1_group_cgpm1_1"
+                Node="Basic"
+                ConfigGroupPath="./[@ShortId='n1_0_0']/[@ShortId='n1_1_0']/[@ShortId='n1_1_2']" >
+                <ConfigItem
+                    Id="Module 1 - Group CGPm1.1 Item"
+                    ShortId="m1_groupcgpm1_1_item"
+                    Desc="Item in group CGPm1.1"
+                    Type="uint"
+                    Size="8"
+                    DefaultValue="0x88"/>
+                <ConfigGroup
+                    Id="Group CGPm1.1.1"
+                    ShortId="m1_group_cgpm1_1_1"
+                    Node="Basic"
+                    ConfigGroupPath="./[@ShortId='n1_0_0']/[@ShortId='n1_1_0']/[@ShortId='n1_1_3']" >
+                    <ConfigItem
+                        Id="Module 1 - Group CGPm1.1.1 Item A"
+                        ShortId="m1_groupcgpm1_1_1_item_a"
+                        Desc="First item in group CGPm1.1.1"
+                        Type="uint"
+                        Size="8"
+                        DefaultValue="0x88"/>
+                    <ConfigItem
+                        Id="Module 1 - Group CGPm1.1.1 Item B"
+                        ShortId="m1_groupcgpm1_1_1_item_b"
+                        Desc="Second item in group CGPm1.1.1"
+                        Type="uint"
+                        Size="8"
+                        DefaultValue="0x88"
+                        ConfigGroupPath="./[@ShortId='n1_0_0']/[@ShortId='n1_2_0']/[@ShortId='n1_2_1']"/>
+                </ConfigGroup>
+            </ConfigGroup>
+        </ConfigGroup>
+
+        <!--
+            A ConfigStruct meant to go to one path, but all of its elements go to another
+        -->
+        <ConfigGroup
+            Id="Group CGPm2"
+            ShortId="m1_group_cgpm2"
+            Node="Basic"
+            ConfigGroupPath="./[@ShortId='n2_0_0']/[@ShortId='n2_2_0']/[@ShortId='n2_2_3']" >
+            <ConfigItem
+                Id="Module 1 - Group CGPm2 Item"
+                ShortId="m1_groupcgpm2_item"
+                Desc="Item in group CGPm2"
+                Type="uint"
+                Size="8"
+                DefaultValue="0x88"
+                ConfigGroupPath="./[@ShortId='n3_0_0']/[@ShortId='n3_1_0']/[@ShortId='n3_1_1']"/>
+            <ConfigStruct
+                Id="Module 1 - Group CGPm2 Struct"
+                ShortId="m1_groupcgpm2_struct"
+                Desc="Struct in group CGPm2"
+                Type="struct"
+                Struct="m1_embedded_lvl1"
+                ConfigGroupPath="./[@ShortId='n1_0_0']/[@ShortId='n1_2_0']/[@ShortId='n1_2_2']" >
+                <StructElementConfigItem 
+                    Id="Group CGPm2 Struct A Item A"
+                    ShortId="m1_grpcgpm2_structa_itema" 
+                    Desc="Group CGPm2 Struct A Item A Desc"
+                    DefaultValue="0xaaaa"
+                    ConfigGroupPath="./[@ShortId='n1_0_0']/[@ShortId='n1_2_0']/[@ShortId='n1_2_3']"/>
+                <StructElementConfigItem 
+                    Id="Group CGPm2 Struct A Item B"
+                    ShortId="m1_grpcgpm2_structa_itemb" 
+                    Desc="Group CGPm2 Struct A Item B Desc"
+                    DefaultValue="2"
+                    ConfigGroupPath="./[@ShortId='n2_0_0']/[@ShortId='n2_1_0']/[@ShortId='n2_1_1']"/>
+                <StructElementConfigItem 
+                    Id="Group CGPm2 Struct A Item C"
+                    ShortId="m1_grpcgpm2_structa_itemc" 
+                    Desc="Group CGPm2 Struct A Item C Desc"
+                    DefaultValue="3"
+                    ConfigGroupPath="./[@ShortId='n2_0_0']/[@ShortId='n2_1_0']/[@ShortId='n2_1_2']"/>
+                <StructElementConfigItem 
+                    Id="Group CGPm2 Struct A Item D"
+                    ShortId="m1_grpcgpm2_structa_itemd" 
+                    Desc="Group CGPm2 Struct A Item D Desc"
+                    DefaultValue="true"
+                    ConfigGroupPath="./[@ShortId='n2_0_0']/[@ShortId='n2_1_0']/[@ShortId='n2_1_3']"/>
+                <StructElementConfigItem 
+                    Id="Group CGPm2 Struct A Item E"
+                    ShortId="m1_grpcgpm2_structa_iteme"
+                    Desc="Group CGPm2 Struct A Item E Desc"
+                    ConfigGroupPath="./[@ShortId='n2_0_0']/[@ShortId='n2_2_0']/[@ShortId='n2_2_1']">
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item A"
+                        ShortId="m1_grpcgpm2_structb_itema" 
+                        Desc="Group CGPm2 Struct B Item A Desc"
+                        DefaultValue="0xbbbb"/>
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item B"
+                        ShortId="m1_grpcgpm2_structb_itemb" 
+                        Desc="Group CGPm2 Struct B Item B Desc"
+                        DefaultValue="-42"/>
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item C"
+                        ShortId="m1_grpcgpm2_structb_itemc" 
+                        Desc="Group CGPm2 Struct B Item C Desc"
+                        DefaultValue="0xbbbbcccc"/>
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item D"
+                        ShortId="m1_grpcgpm2_structb_itemd" 
+                        Desc="Group CGPm2 Struct B Item D Desc"
+                        DefaultValue="3"/>
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item E"
+                        ShortId="m1_grpcgpm2_structb_iteme" 
+                        Desc="Group CGPm2 Struct B Item E Desc"
+                        DefaultValue="2"/>
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item F"
+                        ShortId="m1_grpcgpm2_structb_itemf" 
+                        Desc="Group CGPm2 Struct B Item F Desc"
+                        DefaultValue="false"/>
+                    <StructElementConfigItem 
+                        Id="Group CGPm2 Struct B Item G"
+                        ShortId="m1_grpcgpm2_structb_itemg" 
+                        Desc="Group CGPm2 Struct B Item G Desc"
+                        DefaultValue="Level2"/>
+                </StructElementConfigItem>
+                <StructElementConfigItem 
+                    Id="Group CGPm2 Struct A Item F"
+                    ShortId="m1_grpcgpm2_structa_itemf" 
+                    Desc="Group CGPm2 Struct A Item F Desc"
+                    DefaultValue="Level1"
+                    ConfigGroupPath="./[@ShortId='n2_0_0']/[@ShortId='n2_2_0']/[@ShortId='n2_2_2']"/>
+            </ConfigStruct>
+        </ConfigGroup>
+    </ConfigGroup>
+    
+    <!--
+        Examples with ArrayElementConfigItem, in either ConfigStruct or ConfigPatternArray.
+    -->
+    <ConfigGroup
+        Id="Group A"
+        ShortId="m1_group_a"
+        Node="Basic">
+        <ConfigStruct
+            Id="Module 1 Group A Struct Instance"
+            ShortId="m1_grpa_struct_inst"
+            Desc="Example use of a structure containing an array"
+            Type="struct"
+            Struct="struct_embbeded_array">
+            <StructElementConfigItem
+                Id="Group A Struct A Item A"
+                ShortId="struct_item_a"
+                Desc="Group A Struct A Item A Desc"
+                DefaultValue="0xaaaa" />
+            <StructElementConfigItem
+                Id="Group A Struct A Item B"
+                ShortId="struct_item_b"
+                Desc="Group B Struct A Item B Desc"
+                DefaultValue="0xbb" />
+            <StructElementConfigItem
+                Id="Group A Struct A Embedded Array"
+                ShortId="instance_of_embedded_array"
+                Desc="Group A Struct A Embedded Array">
+                <ArrayElementConfigItem
+                    Id="Embedded Array Item A"
+                    ShortId="m1_grpa_e_array_item_a"
+                    Desc="Array example field a"
+                    DefaultValue="0xffff"/>
+                <ArrayElementConfigItem
+                    Id="Embedded Array Item B"
+                    ShortId="m1_grpa_e_array_item_b"
+                    Desc="Array example field b"
+                    DefaultValue="0xeeee"/>
+            </StructElementConfigItem>
+        </ConfigStruct>
+
+        <ConfigArray
+            Id="Instance of a array"
+            ShortId="m1_grpa_instance_of_array"
+            Desc="Example use of a array" Type="array"
+            ElementType="uint" ArraySize="3"
+            Range="Min=-720,Max=720">
+            <ArrayElementConfigItem
+                Id="Array Item A"
+                ShortId="m1_grpa_array_item_a"
+                Desc="Array example field a"
+                DefaultValue="0x1111"/>
+            <ArrayElementConfigItem
+                Id="Array Item B"
+                ShortId="m1_grpa_array_item_b"
+                Desc="Array example field b"
+                DefaultValue="0x2222"/>
+            <ArrayElementConfigItem
+                Id="Array Item C"
+                ShortId="m1_grpa_array_item_c"
+                Desc="Array example field c"
+                DefaultValue="0x3333"/>
+        </ConfigArray>
+
+        <ConfigGroup
+            Id="Group A-1"
+            ShortId="m1_group_a_1"
+            Node="Array">
+            <ConfigPatternArray
+                Id="Module 1 - Group A-1 Item A"
+                ShortId="m1_grpa1_itema"
+                Pattern="m1_array_pattern_a"
+                FixedNumPatterns="2"
+                Presentation="FixedOrder">
+                <PatternArrayRow
+                    Id="Group A-1 Row1"
+                    ShortId="group_a1_row_1"
+                    Node="Basic">
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r1c1"
+                        DefaultValue="1" />
+                    <PatternArrayConfigItem
+                        ShortId="instance_of_embedded_array">
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array uint a"
+                            ShortId="m1_grpa_p1_array_uint_a"
+                            Desc="Pattern array uint a"
+                            DefaultValue="0xffff" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array uint b"
+                            ShortId="m1_grpa_p1_array_uint_b"
+                            Desc="Pattern array uint b"
+                            DefaultValue="0xeeee" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array uint c"
+                            ShortId="m1_grpa_p1_array_uint_c"
+                            Desc="Pattern array uint c"
+                            DefaultValue="0xdddd" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array uint d"
+                            ShortId="m1_grpa_p1_array_uint_d"
+                            Desc="Pattern array uint d"
+                            DefaultValue="0xcccc" />
+                    </PatternArrayConfigItem>
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r1c3"
+                        DefaultValue="True" />
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r1c4">
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array bitfield d"
+                            ShortId="m1_grpa_p1_array_bitfield_d"
+                            Desc="Pattern array bitfield d"
+                            DefaultValue="0x60" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array bitfield d"
+                            ShortId="m1_grpa_p1_array_bitfield_d"
+                            Desc="Pattern array bitfield d"
+                            DefaultValue="0x03" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array bitfield d"
+                            ShortId="m1_grpa_p1_array_bitfield_d"
+                            Desc="Pattern array bitfield d"
+                            DefaultValue="0x80" />
+                    </PatternArrayConfigItem>
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r1c5">
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x30" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x01" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x50" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x04" />
+                    </PatternArrayConfigItem>
+                </PatternArrayRow>
+                <PatternArrayRow
+                    Id="Group A-1 Row2"
+                    ShortId="group_a1_row_2"
+                    Node="Basic">
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r2c1"
+                        DefaultValue="2" />
+                    <PatternArrayConfigItem
+                        ShortId="instance_of_embedded_array">
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array 2 item a"
+                            ShortId="m1_grpa_p2_array_item_a"
+                            Desc="Pattern array item a"
+                            DefaultValue="0x1111" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array 2 item b"
+                            ShortId="m1_grpa_p2_array_item_b"
+                            Desc="Pattern array item b"
+                            DefaultValue="0x2222" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array 2 item c"
+                            ShortId="m1_grpa_p2_array_item_c"
+                            Desc="Pattern array item c"
+                            DefaultValue="0x3333" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array 2 item d"
+                            ShortId="m1_grpa_p2_array_item_d"
+                            Desc="Pattern array item d"
+                            DefaultValue="0x4444" />
+                    </PatternArrayConfigItem>
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r2c3"
+                        DefaultValue="False" />
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r1c4">
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array bitfield d"
+                            ShortId="m1_grpa_p1_array_bitfield_d"
+                            Desc="Pattern array bitfield d"
+                            DefaultValue="0x80" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array bitfield d"
+                            ShortId="m1_grpa_p1_array_bitfield_d"
+                            Desc="Pattern array bitfield d"
+                            DefaultValue="0x03" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array bitfield d"
+                            ShortId="m1_grpa_p1_array_bitfield_d"
+                            Desc="Pattern array bitfield d"
+                            DefaultValue="0x60" />
+                    </PatternArrayConfigItem>
+                    <PatternArrayConfigItem
+                        ShortId="m1_grpa1_itema_r1c5">
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x04" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x50" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x01" />
+                        <ArrayElementConfigItem
+                            Id="Pattern embedded array enum d"
+                            ShortId="m1_grpa_p1_array_enum_d"
+                            Desc="Pattern array enum d"
+                            DefaultValue="0x30" />
+                    </PatternArrayConfigItem>
+                </PatternArrayRow>
+            </ConfigPatternArray>
+        </ConfigGroup>
+        
+        <ConfigGroup
+            Id="Group A-2"
+            ShortId="m1_group_a_2"
+            Node="Basic">
+            <ConfigArray
+                Id="Struct Array"
+                ShortId="m1_grpa2_struct_array"
+                Desc="Array of DefineStructs"
+                Type="array"
+                ElementType="struct"
+                ElementStruct="basic_struct"
+                ArraySize="4">
+                <ArrayElementConfigItem
+                    Id="Struct Array Item 1"
+                    ShortId="m1_grpa2_struct_array_item_1"
+                    Desc="Struct Array example struct 1" >
+                    <StructElementConfigItem
+                        Id="Struct 1 item A"
+                        ShortId="struct_1_item_a"
+                        Desc="Struct 1 in array, item A"
+                        DefaultValue="0x1111" />
+                    <StructElementConfigItem
+                        Id="Struct 1 item B"
+                        ShortId="struct_1_item_b"
+                        Desc="Struct 1 in array, item B"
+                        DefaultValue="0xaa" />
+                    <StructElementConfigItem
+                        Id="Struct 1 item C"
+                        ShortId="struct_1_item_c"
+                        Desc="Struct 1 in array, item C"
+                        DefaultValue="0x0" />
+                </ArrayElementConfigItem>
+                <ArrayElementConfigItem
+                    Id="Struct Array Item 2"
+                    ShortId="m1_grpa2_struct_array_item_2"
+                    Desc="Struct Array example struct 2" >
+                    <StructElementConfigItem
+                        Id="Struct 2 item A"
+                        ShortId="struct_2_item_a"
+                        Desc="Struct 2 in array, item A"
+                        DefaultValue="0x2222" />
+                    <StructElementConfigItem
+                        Id="Struct 2 item B"
+                        ShortId="struct_2_item_b"
+                        Desc="Struct 2 in array, item B"
+                        DefaultValue="0xbb" />
+                    <StructElementConfigItem
+                        Id="Struct 2 item C"
+                        ShortId="struct_2_item_c"
+                        Desc="Struct 2 in array, item C"
+                        DefaultValue="0x1" />
+                </ArrayElementConfigItem>
+                <ArrayElementConfigItem
+                    Id="Struct Array Item 3"
+                    ShortId="m1_grpa2_struct_array_item_3"
+                    Desc="Struct Array example struct 3" >
+                    <StructElementConfigItem
+                        Id="Struct 3 item A"
+                        ShortId="struct_3_item_a"
+                        Desc="Struct 3 in array, item A"
+                        DefaultValue="0x3333" />
+                    <StructElementConfigItem
+                        Id="Struct 3 item B"
+                        ShortId="struct_3_item_b"
+                        Desc="Struct 3 in array, item B"
+                        DefaultValue="0xcc" />
+                    <StructElementConfigItem
+                        Id="Struct 3 item C"
+                        ShortId="struct_3_item_c"
+                        Desc="Struct 3 in array, item C"
+                        DefaultValue="0x2" />
+                </ArrayElementConfigItem>
+                <ArrayElementConfigItem
+                    Id="Struct Array Item 4"
+                    ShortId="m1_grpa2_struct_array_item_4"
+                    Desc="Struct Array example struct 4" >
+                    <StructElementConfigItem
+                        Id="Struct 4 item A"
+                        ShortId="struct_4_item_a"
+                        Desc="Struct 4 in array, item A"
+                        DefaultValue="0x4444" />
+                    <StructElementConfigItem
+                        Id="Struct 4 item B"
+                        ShortId="struct_4_item_b"
+                        Desc="Struct 4 in array, item B"
+                        DefaultValue="0xdd" />
+                    <StructElementConfigItem
+                        Id="Struct 4 item C"
+                        ShortId="struct_4_item_c"
+                        Desc="Struct 4 in array, item C"
+                        DefaultValue="0x3" />
+                </ArrayElementConfigItem>
+            </ConfigArray>
+
+            <ConfigArray
+                Id="Signed Array"
+                ShortId="m1_grpa2_int_array"
+                Desc="Example use of a signed array"
+                Type="array"
+                ElementType="int"
+                ArraySize="5">
+                <ArrayElementConfigItem
+                    Id="Signed Array Item A"
+                    ShortId="m1_grpa2_signed_array_item_a"
+                    Desc="Signed Array example field a"
+                    DefaultValue="-1"/>
+                <ArrayElementConfigItem
+                    Id="Signed Array Item B"
+                    ShortId="m1_grpa2_signed_array_item_b"
+                    Desc="Signed Array example field b"
+                    DefaultValue="-100"/>
+                <ArrayElementConfigItem
+                    Id="Signed Array Item C"
+                    ShortId="m1_grpa2_signed_array_item_c"
+                    Desc="Signed Array example field c"
+                    DefaultValue="0x0100"/>
+                <ArrayElementConfigItem
+                    Id="Signed Array Item D"
+                    ShortId="m1_grpa2_signed_array_item_d"
+                    Desc="Signed Array example field d"
+                    DefaultValue="-0x0100"/>
+                <ArrayElementConfigItem
+                    Id="Signed Array Item E"
+                    ShortId="m1_grpa2_signed_array_item_e"
+                    Desc="Signed Array example field e"
+                    DefaultValue="63"/>
+            </ConfigArray>            
+        </ConfigGroup>
+
+        <ConfigGroup
+            Id="Group A-3"
+            ShortId="m1_group_a_3"
+            Node="Basic">
+            <ConfigArray
+                Id="bitfield Array"
+                ShortId="m1_grpa3_bitfield_array"
+                Desc="Array of bitfield"
+                Type="array"
+                ElementType="bitfield"
+                ArraySize="6" >
+                <bitfield key="array bitfield 1" value="1" />
+                <bitfield key="array bitfield 2" value="3" />
+                <bitfield key="array bitfield 3" value="6" />
+                <bitfield key="array bitfield 4" value="10" />
+                <bitfield key="array bitfield 5" value="15" />
+                <ArrayElementConfigItem
+                    Id="Group A-3 bitfield Array Item A"
+                    ShortId="m1_grpa3_bitfield_array_item_a"
+                    Desc="Bitfield Array example field a"
+                    DefaultValue="0x02"/>
+                <ArrayElementConfigItem
+                    Id="Group D bitfield Array Item B"
+                    ShortId="m1_grpa3_bitfield_array_item_b"
+                    Desc="Bitfield Array example field b"
+                    DefaultValue="0x8000"/>
+                <ArrayElementConfigItem
+                    Id="Group D bitfield Array Item C"
+                    ShortId="m1_grpa3_bitfield_array_item_c"
+                    Desc="Bitfield Array example field c"
+                    DefaultValue="0x0c"/>
+                <ArrayElementConfigItem
+                    Id="Group D bitfield Array Item D"
+                    ShortId="m1_grpa3_bitfield_array_item_d"
+                    Desc="Bitfield Array example field d"
+                    DefaultValue="0x400"/>
+                <ArrayElementConfigItem
+                    Id="Group D bitfield Array Item E"
+                    ShortId="m1_grpa3_bitfield_array_item_e"
+                    Desc="Bitfield Array example field e"
+                    DefaultValue="0x8002"/>
+                <ArrayElementConfigItem
+                    Id="Group D bitfield Array Item F"
+                    ShortId="m1_grpa3_bitfield_array_item_f"
+                    Desc="Bitfield Array example field f"
+                    DefaultValue="0xe"/>
+            </ConfigArray>
+            <ConfigArray
+                Id="enum Array"
+                ShortId="m1_grpa3_enum_array"
+                Desc="Array of enum"
+                Type="array"
+                ElementType="enum"
+                ArraySize="4" >
+                <enum key="array enum 1" value="1" />
+                <enum key="array enum 2" value="3" />
+                <enum key="array enum 3" value="6" />
+                <enum key="array enum 4" value="10" />
+                <enum key="array enum 5" value="15" />
+                <enum key="array enum 6" value="21" />
+                <ArrayElementConfigItem
+                    Id="Group A-3 enum Array Item A"
+                    ShortId="m1_grpa3_enum_array_item_a"
+                    Desc="Enum Array example field a"
+                    DefaultValue="1"/>
+                <ArrayElementConfigItem
+                    Id="Group D enum Array Item B"
+                    ShortId="m1_grpa3_enum_array_item_b"
+                    Desc="Enum Array example field b"
+                    DefaultValue="6"/>
+                <ArrayElementConfigItem
+                    Id="Group D enum Array Item C"
+                    ShortId="m1_grpa3_enum_array_item_c"
+                    Desc="Enum Array example field c"
+                    DefaultValue="21"/>
+                <ArrayElementConfigItem
+                    Id="Group D enum Array Item D"
+                    ShortId="m1_grpa3_enum_array_item_d"
+                    Desc="Enum Array example field d"
+                    DefaultValue="15"/>
+            </ConfigArray>
+        </ConfigGroup>
+    </ConfigGroup>
+
+    
+    <!--
+        Example of a Pattern Array with an Nested Struct Element
+    -->
+    <ConfigGroup 
+        Id="Group B" 
+        ShortId="m1_group_b" 
+        Node="Array">
+        
+        <ConfigPatternArray 
+            Id="Module 1 - Group B Item A"
+            ShortId="m1_grpb_itema"
+            Pattern="m1_pattern_array_struct_b"
+            FixedNumPatterns="1">
+
+            <PatternArrayRow 
+                Id="Group B Row1" 
+                ShortId="group_b_row_1" 
+                Node="Basic">
+                <PatternArrayConfigItem 
+                    ShortId="m1_grpb_itema_r1c1" 
+                    DefaultValue="1" />
+                <PatternArrayConfigItem 
+                    ShortId="m1_grpb_itemb_r1c2">
+                    <StructElementConfigItem 
+                        Id="Group B Item B Struct Lvl1 Item A"
+                        ShortId="m1_grpb_struct_lvl1_itema" 
+                        Desc="Group B Item B Struct Item A Desc"
+                        DefaultValue="0xcccc"/>
+                    <StructElementConfigItem 
+                        Id="Group B Item B Struct Lvl1 Item B"
+                        ShortId="m1_grpb_struct_lvl1_itemb" 
+                        Desc="Group B Item B Struct Item B Desc"
+                        DefaultValue="3"/>
+                    <StructElementConfigItem 
+                        Id="Group B Item B Struct Lvl1 Item C"
+                        ShortId="m1_grpb_struct_lvl1_itemc" 
+                        Desc="Group B Item B Struct Item C Desc"
+                        DefaultValue="1"/>
+                    <StructElementConfigItem 
+                        Id="Group B Item B Struct Lvl1 Item D"
+                        ShortId="m1_grpb_struct_lvl1_itemd"
+                        Desc="Group B Struct A Item D Desc">
+                        <StructElementConfigItem 
+                            Id="Group B Struct Lvl2 Item A"
+                            ShortId="m1_grpb_struct_lvl2_itema" 
+                            Desc="Group B Struct Lvl2 Item A Desc"
+                            DefaultValue="0xdddd"/>
+                        <StructElementConfigItem 
+                            Id="Group B Struct Lvl2 Item B"
+                            ShortId="m1_grpb_struct_lvl2_itemb" 
+                            Desc="Group B Struct Lvl2 Item B Desc"
+                            DefaultValue="2"/>
+                        <StructElementConfigItem 
+                            Id="Group B Struct Lvl2 Item C"
+                            ShortId="m1_grpb_struct_lvl2_itemc" 
+                            Desc="Group B Struct Lvl2 Item C Desc"
+                            DefaultValue="2"/>
+                        <StructElementConfigItem 
+                            Id="Group B Struct Lvl2 Item D"
+                            ShortId="m1_grpb_struct_lvl2_itemd" 
+                            Desc="Group B Struct Lvl2 Item D Desc"
+                            DefaultValue="True"/>
+                    </StructElementConfigItem>
+                    <StructElementConfigItem 
+                        Id="Group B Struct Lvl1 Item E"
+                        ShortId="m1_grpb_struct_lvl1_iteme" 
+                        Desc="Group B Struct A Item E Desc"
+                        DefaultValue="True"/>
+                </PatternArrayConfigItem>
+                <PatternArrayConfigItem 
+                    ShortId="m1_grpb_itemc_r1c3" 
+                    DefaultValue="true" />
+            </PatternArrayRow>
+        </ConfigPatternArray>
+    </ConfigGroup>
+
+    <!--
+        Example of Enum Disabler Pattern
+    -->
+    <ConfigGroup
+        Id="Group C"
+        ShortId="m1_group_c"
+        Node="Array">
+        <!--
+            Example of array referencing a
+            pattern defined in the Module
+            ConfigDefine section
+        -->
+        <ConfigPatternArray
+            Id="Module 1 - Group C Item A"
+            ShortId="m1_groupc_itema"
+            Pattern="m1_enum_disabler"
+            FixedNumPatterns="2">
+            <PatternArrayRow
+                Id="Group C Row1"
+                ShortId="groupc_r1"
+                Node="Basic">
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupc_itema_r1c1"
+                    DefaultValue="1" />
+                <PatternArrayConfigItem 
+                    ShortId="m1_groupc_itema_r1c2"
+                    DefaultValue="3" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupc_itema_r1c3"
+                    DefaultValue="10" />
+            </PatternArrayRow>
+            <PatternArrayRow
+                Id="Group C Row2"
+                ShortId="groupc_r2"
+                Node="Basic">
+                <PatternArrayConfigItem
+                    ShortId="m1_groupc_itema_r2c1"
+                    DefaultValue="2" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupc_itema_r2c2"
+                    DefaultValue="1" />
+                <PatternArrayConfigItem
+                    ShortId="m1_groupc_itema_r2c3"
+                    DefaultValue="20" />
+            </PatternArrayRow>
+        </ConfigPatternArray>
+    </ConfigGroup>
+    
+    <!--
+        Example grouped ConfigPatternArrays Group Set1 ConfigGroup1
+    -->
+    <ConfigGroup 
+        Node="Basic" 
+        ShortId="user_events_set1_cg1"
+        Id="User Events Set1 CG1" >
+        <ConfigGroup 
+            Node="Array" 
+            ShortId="user_events_set1_cg1_child"
+            Id="User Events Set1 CG1 Child" >
+            <ConfigPatternArray
+                Id="User Events Set1 CG1 Array"
+                ShortId="user_events_set1_cg1_array"
+                GroupId="Group Button Event Set"
+                Pattern="m1_example_pattern_a"
+                FixedNumPatterns="2"
+                ConfigGroupPath="./[@Id='User Interfaces']/[@Id='User Events']">
+                <PatternArrayRow
+                    Id="Button Set1 CG2 Row1"
+                    ShortId="button_set1_cg1_r1"
+                    Node="Basic">
+                    <PatternArrayConfigItem 
+                        ShortId="button_set1_cg1_r1c1"
+                        DefaultValue="0x101" />
+                    <PatternArrayConfigItem 
+                        ShortId="button_set1_cg1_r1c2"
+                        DefaultValue="33" />
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r1c3"
+                        DefaultValue="0xfedcba98" />
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r1c4"
+                        DefaultValue="2" />
+                    <PatternArrayConfigItem 
+                        ShortId="button_set1_cg1_r1c5"
+                        DefaultValue="True" />
+                </PatternArrayRow>
+                <PatternArrayRow
+                    Id="Button Set1 CG2 Row2"
+                    ShortId="button_set1_cg1_r2"
+                    Node="Basic">
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r2c1"
+                        DefaultValue="0x102" />
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r2c2"
+                        DefaultValue="44" />
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r2c3"
+                        DefaultValue="0xfedcba97" />
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r2c4"
+                        DefaultValue="3" />
+                    <PatternArrayConfigItem
+                        ShortId="button_set1_cg1_r2c5"
+                        DefaultValue="False" />
+                </PatternArrayRow>
+            </ConfigPatternArray>
+        </ConfigGroup>
+    </ConfigGroup>
+
+    <!--
+        Example grouped ConfigPatternArrays Group Set1 ConfigGroup2
+    -->
+    <ConfigGroup 
+        Node="Array" 
+        ShortId="user_events_set1_cg2"
+        Id="User Events Set1 CG2" >
+        <ConfigPatternArray
+            Id="User Events Set1 CG2 Array"
+            ShortId="user_events_set1_cg2_array"
+            GroupId="Group Button Event Set"
+            Pattern="m1_example_pattern_a"
+            FixedNumPatterns="2"
+            ConfigGroupPath="./[@Id='User Interfaces']/[@Id='User Events']">
+            <PatternArrayRow
+                Id="Button Set1 CG2 Row3"
+                ShortId="button_set1_cg2_r3"
+                Node="Basic">
+                <PatternArrayConfigItem 
+                    ShortId="button_set1_cg2_r3c1"
+                    DefaultValue="0x201" />
+                <PatternArrayConfigItem 
+                    ShortId="button_set1_cg2_r3c2"
+                    DefaultValue="33" />
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r3c3"
+                    DefaultValue="0xfedcba96" />
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r3c4"
+                    DefaultValue="2" />
+                <PatternArrayConfigItem 
+                    ShortId="button_set1_cg2_r3c5"
+                    DefaultValue="True" />
+            </PatternArrayRow>
+            <PatternArrayRow
+                Id="Button Set1 CG2 Row4"
+                ShortId="button_set1_cg2_r4"
+                Node="Basic">
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r4c1"
+                    DefaultValue="0x202" />
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r4c2"
+                    DefaultValue="44" />
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r4c3"
+                    DefaultValue="0xfedcba95" />
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r4c4"
+                    DefaultValue="3" />
+                <PatternArrayConfigItem
+                    ShortId="button_set1_cg2_r4c5"
+                    DefaultValue="False" />
+            </PatternArrayRow>
+        </ConfigPatternArray>
+    </ConfigGroup>
+
+    <!--
+        Example of using BuildVariant values
+    -->
+    <ConfigGroup 
+        Node="Basic" 
+        ShortId="group_d"
+        Id="Group D" >
+
+        <ConfigItem
+            Id="Module 1 - Group D Item A"
+            ShortId="m1_groupd_itema"
+            Desc="String in group D"
+            Type="AsciiString"
+            MaxStrLenBytes="20"
+            DefaultValue="Default Value">
+            <BuildVariant
+                HwVariant="hw_variant"
+                SwVariant="All"
+                Value="Exact Hw Match"/>
+            <BuildVariant
+                HwVariant="All"
+                SwVariant="sw_variant"
+                Value="Exact Sw Match"/>
+            <BuildVariant
+                HwVariant="hw_variant"
+                SwVariant="sw_variant"
+                Value="Exact Hw/Sw Match"/>
+        </ConfigItem>
+
+        <ConfigItem
+            Id="Module 1 - Group D Item B"
+            ShortId="m1_groupd_itemb"
+            Desc="Ulong in group D"
+            Type="ulong"
+            Size="32"
+            DefaultValue="0x12345678">
+            <BuildVariant
+                HwVariant="hw_variant"
+                SwVariant="sw_variant"
+                Value="0x9abcdef1"/>
+        </ConfigItem>
+
+        <ConfigArray
+            Id="Module 1 - Group D Item C"
+            ShortId="m1_groupd_itemc"
+            Desc="Config array in group D"
+            Type="array"
+            ElementType="int"
+            ArraySize="5">
+            <ArrayElementConfigItem
+                Id="Group D Signed Array Item A"
+                ShortId="m1_groupd_signed_array_item_a"
+                Desc="Signed Array example field a"
+                DefaultValue="-115"/>
+            <ArrayElementConfigItem
+                Id="Group D Signed Array Item B"
+                ShortId="m1_groupd_signed_array_item_b"
+                Desc="Signed Array example field b"
+                DefaultValue="-100">
+                <BuildVariant
+                    HwVariant="hw_variant"
+                    SwVariant="sw_variant"
+                    Value="100"/>
+            </ArrayElementConfigItem>
+            <ArrayElementConfigItem
+                Id="Group D Signed Array Item C"
+                ShortId="m1_groupd_signed_array_item_c"
+                Desc="Signed Array example field c"
+                DefaultValue="0x0100"/>
+            <ArrayElementConfigItem
+                Id="Group D Signed Array Item D"
+                ShortId="m1_groupd_signed_array_item_d"
+                Desc="Signed Array example field d"
+                DefaultValue="-0x0100"/>
+            <ArrayElementConfigItem
+                Id="Group D Signed Array Item E"
+                ShortId="m1_groupd_signed_array_item_e"
+                Desc="Signed Array example field e"
+                DefaultValue="63">
+                <BuildVariant
+                    HwVariant="hw_variant"
+                    SwVariant="sw_variant"
+                    Value="-63"/>
+            </ArrayElementConfigItem>
+        </ConfigArray>
+
+        <ConfigGroup 
+            Id="Group D1" 
+            ShortId="m1_group_d1" 
+            Node="Array">
+
+            <ConfigPatternArray 
+                Id="Module 1 - Group D1 Item A"
+                ShortId="m1_groupd1_itema"
+                Pattern="m1_pattern_array_struct_b"
+                FixedNumPatterns="1">
+
+                <PatternArrayRow 
+                    Id="Group D1 Row1" 
+                    ShortId="group_d1_row_1" 
+                    Node="Basic">
+                    <PatternArrayConfigItem 
+                        ShortId="m1_groupd1_itema_r1c1" 
+                        DefaultValue="0x1111">
+                        <BuildVariant
+                            HwVariant="hw_variant"
+                            SwVariant="sw_variant"
+                            Value="0xaaaa"/>
+                    </PatternArrayConfigItem>
+                    <PatternArrayConfigItem 
+                        ShortId="m1_groupd1_itema_r1c2">
+                        <StructElementConfigItem 
+                            Id="Group D1 Struct Lvl1 Item A"
+                            ShortId="m1_groupd1_struct_lvl1_itema" 
+                            Desc="Group D1 Struct Item A Desc"
+                            DefaultValue="0x2222">
+                            <BuildVariant
+                                HwVariant="hw_variant"
+                                SwVariant="sw_variant"
+                                Value="0xbbbb"/>
+                        </StructElementConfigItem>
+                        <StructElementConfigItem 
+                            Id="Group D1 Struct Lvl1 Item B"
+                            ShortId="m1_groupd1_struct_lvl1_itemb" 
+                            Desc="Group D1 Struct Item B Desc"
+                            DefaultValue="3"/>
+                        <StructElementConfigItem 
+                            Id="Group D1 Struct Lvl1 Item C"
+                            ShortId="m1_groupd1_struct_lvl1_itemc" 
+                            Desc="Group D1 Struct Item C Desc"
+                            DefaultValue="1"/>
+                        <StructElementConfigItem 
+                            Id="Group D1 Struct Lvl1 Item D"
+                            ShortId="m1_groupd1_struct_lvl1_itemd"
+                            Desc="Group D1 Struct Item D Desc">
+                            <StructElementConfigItem 
+                                Id="Group D1 Struct Lvl2 Item A"
+                                ShortId="m1_groupd1_struct_lvl2_itema" 
+                                Desc="Group D1 Struct Lvl2 Item A Desc"
+                                DefaultValue="0x3333"/>
+                            <StructElementConfigItem 
+                                Id="Group D1 Struct Lvl2 Item B"
+                                ShortId="m1_groupd1_struct_lvl2_itemb" 
+                                Desc="Group D1 Struct Lvl2 Item B Desc"
+                                DefaultValue="2">
+                                <BuildVariant
+                                    HwVariant="hw_variant"
+                                    SwVariant="sw_variant"
+                                    Value="3"/>
+                            </StructElementConfigItem>
+                            <StructElementConfigItem 
+                                Id="Group D1 Struct Lvl2 Item C"
+                                ShortId="m1_groupd1_struct_lvl2_itemc" 
+                                Desc="Group D1 Struct Lvl2 Item C Desc"
+                                DefaultValue="2"/>
+                            <StructElementConfigItem 
+                                Id="Group D1 Struct Lvl2 Item D"
+                                ShortId="m1_groupd1_struct_lvl2_itemd" 
+                                Desc="Group D1 Struct Lvl2 Item D Desc"
+                                DefaultValue="True">
+                                <BuildVariant
+                                    HwVariant="hw_variant"
+                                    SwVariant="sw_variant"
+                                    Value="False"/>
+                            </StructElementConfigItem>
+                        </StructElementConfigItem>
+                        <StructElementConfigItem 
+                            Id="Group D1 Struct Lvl1 Item E"
+                            ShortId="m1_groupd1_struct_lvl1_iteme" 
+                            Desc="Group D1 Struct Item E Desc"
+                            DefaultValue="True"/>
+                    </PatternArrayConfigItem>
+                    <PatternArrayConfigItem 
+                        ShortId="m1_groupd1_itema_r1c3" 
+                        DefaultValue="True">
+                        <BuildVariant
+                            HwVariant="hw_variant"
+                            SwVariant="sw_variant"
+                            Value="False"/>
+                    </PatternArrayConfigItem>
+                </PatternArrayRow>
+            </ConfigPatternArray>
+        </ConfigGroup>
+    </ConfigGroup>
+</ModuleData>

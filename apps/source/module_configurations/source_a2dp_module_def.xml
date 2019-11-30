@@ -1,0 +1,368 @@
+<ModuleData Name="source_a2dp">
+
+    <ConfigGroup Id="A2DP Config Codecs" ShortId="a2dp_codecs" Node="Basic">
+			<ConfigItem
+				Id="A2DP Profile"
+				ShortId="a2dpProfile"
+				Desc="This feature enables the user to decide if needed to enable the A2DP 1.2 profile or disable it"
+				Type="enum"
+				Size="2"
+				DefaultValue="A2DP 1.2 Enabled"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']">
+					<enum key="Disabled"
+						  value="0"/>
+					<enum key="A2DP 1.2 Enabled"
+						  value="1"/>
+			</ConfigItem>
+			<ConfigItem
+				Id="SBC Enable"
+				ShortId="a2dpCodecsSBCEnable"
+				Desc="When this option is set, the A2DP streaming would have SBC codec enabled."
+				Type="bool"
+				Size="1"
+				DefaultValue="true"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']"/>
+			<ConfigItem
+				Id="FastStream Enable"
+				ShortId="a2dpCodecsFastStreamEnable"
+				Desc="When this option is set, the A2DP streaming would have Fast Stream codec enabled."
+				Type="bool"
+				Size="1"
+				DefaultValue="true"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']"/>
+			<ConfigItem
+				Id="AptX Enable"
+				ShortId="a2dpCodecsAptXEnable"
+				Desc="When this option is set, the A2DP streaming would have AptX codec enabled."
+				Type="bool"
+				Size="1"
+				DefaultValue="false"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']"/>
+			<ConfigItem
+				Id="AptX Low Latency Enable"
+				ShortId="a2dpCodecsAptXLLEnable"
+				Desc="When this option is set, the A2DP streaming would have AptX Low latency codec enabled."
+				Type="bool"
+				Size="1"
+				DefaultValue="false"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']"/>
+			<ConfigItem
+				Id="AptX HD Enable"
+				ShortId="a2dpCodecsAptXHDEnable"
+				Desc="When this option is set, the A2DP streaming would have AptX HD codec enabled."
+				Type="bool"
+				Size="1"
+				DefaultValue="false"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']"/>
+			<ConfigItem
+				Id="A2DP Connection Failed [mins]"
+				ShortId="A2DPConnectionFailed_m"
+				Desc="Time to wait before retrying to connect A2DP, after a failed A2DP connection attempt, in seconds."
+				Type="uint"
+				Size="16"
+				DefaultValue="0x07D0"
+				ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+			<ConfigItem
+				Id="A2DP Maximum Connection Retries"
+				ShortId="A2DPMaxContRetries"
+				Desc="Number of times the source will attempt to reconnect the A2DP profile."
+				Type="uint"
+				Size="16"
+				DefaultValue="0x0002"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='reconnection']"/>
+			<ConfigItem
+				Id="SBC Connection Preference"
+				ShortId="a2dpCodecsSBCPref"
+				Desc="The connection preference to associate with the SBC codec when initiating a media connection (a unique preference order should be used for each codec)."
+				Type="enum"
+				Size="4"
+				DefaultValue="Use as second choice"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']">
+				<enum key="Use as first choice"
+					  value="1"/>
+				<enum key="Use as second choice"
+					  value="2"/>
+				<enum key="Use as third choice"
+					  value="3"/>
+				<enum key="Use as fourth choice"
+					  value="4"/>
+				<enum key="Use as fifth choice"
+					  value="5"/>
+				<enum key="Unassigned"
+					  value="0"/>
+			</ConfigItem>
+			<ConfigItem
+				Id="FastStream Connection Preference"
+				ShortId="a2dpFastStreamPref"
+				Desc="The connection preference to associate with the FastStream codec when initiating a media connection (a unique preference order should be used for each codec)."
+				Type="enum"
+				Size="4"
+				DefaultValue="Use as first choice"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']">
+				<enum key="Use as first choice"
+					  value="1"/>
+				<enum key="Use as second choice"
+					  value="2"/>
+				<enum key="Use as third choice"
+					  value="3"/>
+				<enum key="Use as fourth choice"
+					  value="4"/>
+				<enum key="Use as fifth choice"
+					  value="5"/>
+				<enum key="Unassigned"
+					  value="0"/>
+			</ConfigItem>
+			<ConfigItem
+				Id="AptX Connection Preference"
+				ShortId="a2dpCodecsAptXPref"
+				Desc="The connection preference to associate with the AptX codec when initiating a media connection (a unique preference order should be used for each codec)"
+				Type="enum"
+				Size="4"
+				DefaultValue="Use as third choice"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']">
+				<enum key="Use as first choice"
+					  value="1"/>
+				<enum key="Use as second choice"
+					  value="2"/>
+				<enum key="Use as third choice"
+					  value="3"/>
+				<enum key="Use as fourth choice"
+					  value="4"/>
+				<enum key="Use as fifth choice"
+					  value="5"/>
+				<enum key="Unassigned"
+					  value="0"/>
+			</ConfigItem>
+			<ConfigItem
+				Id="AptX Low Latency Connection Preference"
+				ShortId="a2dpCodecsAptXLLPref"
+				Desc="The connection preference to associate with the AptX Low Latency codec when initiating a media connection (a unique preference order should be used for each codec)."
+				Type="enum"
+				Size="4"
+				DefaultValue="Use as fourth choice"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']">
+				<enum key="Use as first choice"
+					  value="1"/>
+				<enum key="Use as second choice"
+					  value="2"/>
+				<enum key="Use as third choice"
+					  value="3"/>
+				<enum key="Use as fourth choice"
+					  value="4"/>
+				<enum key="Use as fifth choice"
+					  value="5"/>
+				<enum key="Unassigned"
+					  value="0"/>
+			</ConfigItem>
+			<ConfigItem
+				Id="AptX HD Connection Preference"
+				ShortId="a2dpCodecsAptXHDPref"
+				Desc="The connection preference to associate with the AptX HD codec when initiating a media connection (a unique preference order should be used for each codec)."
+				Type="enum"
+				Size="5"
+				DefaultValue="Use as fifth choice"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']">
+				<enum key="Use as first choice"
+					  value="1"/>
+				<enum key="Use as second choice"
+					  value="2"/>
+				<enum key="Use as third choice"
+					  value="3"/>
+				<enum key="Use as fourth choice"
+					  value="4"/>
+				<enum key="Use as fifth choice"
+					  value="5"/>
+				<enum key="Unassigned"
+					  value="0"/>
+			</ConfigItem>
+	</ConfigGroup>
+
+	<ConfigGroup Id="A2DP Enabling Feature" ShortId="a2dp_Enable" Node="Basic">
+			<ConfigItem
+            Id="Enable A2DP Streaming"
+            ShortId="EnableA2dpStreaming"
+            Desc="When set,the streaming audio using A2DP profile is enabled."
+            Type="bool"
+            Size="1"
+            DefaultValue="true"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']"/>
+	</ConfigGroup>
+
+	<ConfigGroup Id="SBC Codec features" ShortId="SBC_Codec_features" Node="Basic">
+        <ConfigItem
+            Id="Sampling Frequency"
+            ShortId="SamplingFrequency"
+            Desc="This specifies the sampling frequency to be used over SBC."
+            Type="bitfield"
+            Size="8"
+            DefaultValue="0x1F"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='SBC']">
+			<bitfield key="Channel Mode Joint Stereo"
+					  value="0"/>
+			<bitfield key="Channel Mode Stereo"
+					  value="1"/>
+			<bitfield key="Channel Mode Dual Channel"
+					  value="2"/>
+			<bitfield key="Channel Mode Mono"
+					  value="3"/>
+			<bitfield key="Sampling Frequency 48 kHz"
+					  value="4"/>
+			<bitfield key="Sampling Frequency 44.1 kHz"
+					  value="5"/>
+			<bitfield key="Sampling Frequency 32 kHz"
+					  value="6"/>
+			<bitfield key="Sampling Frequency 16 kHz"
+					  value="7"/>
+		</ConfigItem>
+		<ConfigItem
+			Id="Maximum Bitpool"
+			ShortId="sbcMaxBitpool"
+			Desc="Specifies the maximum bitpool size supported for SBC."
+			Range="Min=2,Max=250"
+			Type="uint"
+			Size="8"
+            DefaultValue="53"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='SBC']"/>
+		<ConfigItem
+			Id="Minimum Bitpool"
+			ShortId="sbcMinBitpool"
+			Desc="Specifies the minimum bitpool size supported for SBC."
+			Range="Min=2,Max=250"
+			Type="uint"
+			Size="8"
+            DefaultValue="2"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='SBC']"/>
+		<ConfigItem
+			Id="SBC Force Max Bitpool"
+			ShortId="featuresForceMaxBitpool"
+			Desc="Force the source to alays use the maximum SBC bitpool that was configured."
+			Type="bool"
+			Size="1"
+            DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='SBC']"/>
+		<ConfigItem
+			Id="SBC Config Parameters"
+			ShortId="SbcParams"
+			Desc="Enables the tester to select the Block length. Used only for Qualification Testing"
+			Type="bitfield"
+			Size="8"
+			DefaultValue="0xFF"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='SBC']">"
+			<bitfield key="SBC Allocation Loudness"
+					  value="0"/>
+			<bitfield key="SBC Allocation SNR"
+					  value="1"/>
+			<bitfield key="SBC Subbands 8"
+					  value="2"/>
+			<bitfield key="SBC Subbands 4"
+					  value="3"/>
+			<bitfield key="SBC Block Length 16"
+					  value="4"/>
+			<bitfield key="SBC Block Length 12"
+					  value="5"/>
+			<bitfield key="SBC Block Length 8"
+					  value="6"/>
+			<bitfield key="SBC Block Length 4"
+					  value="7"/>
+		</ConfigItem>	  
+	</ConfigGroup>
+	
+	<ConfigGroup Id="Fast Stream" ShortId="Fast_Stream" Node="Basic">
+		<ConfigItem
+			Id="Music / Voice Support"
+			ShortId="MusicVoiceSupport"
+			Desc="This feature specifies the supported audio directions(Music or Voice) over FastStream codec."
+			Type="bitfield"
+			Size="2"
+            DefaultValue="0x03"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='FastStream']">
+			<bitfield key="FastStream Music"
+					  value="0"/>
+			<bitfield key="FastStream Voice"
+					  value="1"/>
+		</ConfigItem>
+		<ConfigItem
+			Id="Music / Voice Sampling Frequencies"
+			ShortId="MusicVoiceSampFreq"
+			Desc="Specifies the supported sampling frequencies for audio configuration using Fast stream codec."
+			Type="bitfield"
+			Size="6"
+            DefaultValue="0x21"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='FastStream']">
+			<bitfield key="FastStream Music Sampling Frequency 48 kHz"
+					  value="0"/>
+			<bitfield key="FastStream Music Sampling Frequency 44.1 kHz"
+					  value="1"/>
+			<bitfield key="FastStream Voice Sampling Frequency 16 kHz"
+					  value="5"/>
+		</ConfigItem>
+	</ConfigGroup>
+	
+	<ConfigGroup Id="AptX" ShortId="AptX" Node="Basic">
+		<ConfigItem
+			Id="AptX Sampling Freq"
+			ShortId="AptXSamplingFreq"
+			Desc="This feature specifies AptX sampling frequencies over a bluetooth wireless connection."
+			Type="bitfield"
+			Size="6"
+            DefaultValue="0x10"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='aptx']">
+			<bitfield key="Sampling Frequency 48 kHz "
+					  value="4"/>
+			<bitfield key="Sampling Frequency 44.1 kHz"
+					  value="5"/>
+		</ConfigItem>
+	</ConfigGroup>
+
+	<ConfigGroup Id="AptX Low Latency" ShortId="AptX_low_latency" Node="Basic">
+		<ConfigItem
+			Id="Bi-directional Audio"
+			ShortId="aptxLLBidirectional"
+			Desc="When true, specifies that bi-directional support is enabled over aptx Low latency(i.e. Voice back channel)."
+			Type="bool"
+			Size="1"
+            DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='aptx_low_latency']"/>
+		<ConfigItem
+			Id="AptX Low Latency Sampling Frequencies"
+			ShortId="AptXLowLatencySampFreq"
+			Desc="This feature specifies AptX Low latency sampling frequencies over a bluetooth wireless connection."
+			Type="bitfield"
+			Size="6"
+            DefaultValue="Sampling Frequency 48 kHz"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='aptx_low_latency']">
+			<bitfield key="Sampling Frequency 48 kHz"
+					  value="4"/>
+			<bitfield key="Sampling Frequency 44.1 kHz"
+					  value="5"/>
+		</ConfigItem>
+	</ConfigGroup>	
+	<ConfigGroup Id="AptX HD" ShortId="AptX_HD" Node="Basic">
+		<ConfigItem
+			Id="AptX HD Sampling Frequencies"
+			ShortId="AptXHDSampFreq"
+			Desc="This feature specifies AptX HD sampling frequencies over a bluetooth wireless connection."
+			Type="bitfield"
+			Size="6"
+            DefaultValue="Sampling Frequency 48 kHz"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='a2dp_g']/[@ShortId='Codecs']/[@ShortId='aptx_hd']">
+			<bitfield key="Sampling Frequency 48 kHz"
+					  value="4"/>
+			<bitfield key="Sampling Frequency 44.1 kHz "
+					  value="5"/>
+		</ConfigItem>
+	</ConfigGroup>	
+	<ConfigGroup
+		Id="Number Of Entries for A2DP"
+		ShortId="number_of_entries_A2DP"
+		Node="Expert">
+		<ConfigItem
+			Id="A2DP ENTRIES"
+			ShortId="a2dp_entries"
+			Desc="."
+			Type="uint"
+			Size="8"
+			DefaultValue="0x00"/>
+	</ConfigGroup>
+	
+</ModuleData>

@@ -1,0 +1,4 @@
+broadcast_cmd/default/BlueLab-7.4-Release/assisted/broadcast_cmd_debug.o:  \
+ broadcast_cmd/broadcast_cmd_debug.c broadcast_cmd/broadcast_cmd_debug.h
+
+broadcast_cmd/broadcast_cmd_debug.h:

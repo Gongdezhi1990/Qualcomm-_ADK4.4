@@ -1,0 +1,7 @@
+byte_utils/default/BlueLab-7.4-Release/assisted/byte_utils.o:  \
+ byte_utils/byte_utils.c byte_utils/byte_utils.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h
+
+byte_utils/byte_utils.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:

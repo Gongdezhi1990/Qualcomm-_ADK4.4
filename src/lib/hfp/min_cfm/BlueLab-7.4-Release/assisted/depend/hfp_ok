@@ -1,0 +1,154 @@
+hfp/min_cfm/BlueLab-7.4-Release/assisted/hfp_ok.o: hfp/hfp_ok.c hfp/hfp.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection_no_ble.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb_.h \
+  hfp/hfp_private.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h \
+  hfp/hfp_common.h hfp/hfp_ok.h hfp/hfp_parse.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h \
+  hfp/hfp_send_data.h hfp/hfp_slc_handler.h hfp/hfp_indicators_handler.h \
+  hfp/hfp_call_handler.h hfp/hfp_current_calls_handler.h \
+  hfp/hfp_multiple_calls_handler.h hfp/hfp_extended_error_handler.h \
+  hfp/hfp_response_hold_handler.h hfp/hfp_link_manager.h \
+  hfp/hfp_wbs_handler.h hfp/hfp_wbs.h hfp/hfp_dial_handler.h \
+  hfp/hfp_voice_handler.h hfp/hfp_nrec_handler.h \
+  hfp/hfp_voice_tag_handler.h hfp/hfp_subscriber_num_handler.h \
+  hfp/hfp_dtmf_handler.h hfp/hfp_network_operator_handler.h \
+  hfp/hfp_csr_features.h hfp/hfp_caller_id_handler.h hfp/hfp_hs_handler.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h
+
+hfp/hfp.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection_no_ble.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb_.h:
+
+hfp/hfp_private.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h:
+
+hfp/hfp_common.h:
+
+hfp/hfp_ok.h:
+
+hfp/hfp_parse.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h:
+
+hfp/hfp_send_data.h:
+
+hfp/hfp_slc_handler.h:
+
+hfp/hfp_indicators_handler.h:
+
+hfp/hfp_call_handler.h:
+
+hfp/hfp_current_calls_handler.h:
+
+hfp/hfp_multiple_calls_handler.h:
+
+hfp/hfp_extended_error_handler.h:
+
+hfp/hfp_response_hold_handler.h:
+
+hfp/hfp_link_manager.h:
+
+hfp/hfp_wbs_handler.h:
+
+hfp/hfp_wbs.h:
+
+hfp/hfp_dial_handler.h:
+
+hfp/hfp_voice_handler.h:
+
+hfp/hfp_nrec_handler.h:
+
+hfp/hfp_voice_tag_handler.h:
+
+hfp/hfp_subscriber_num_handler.h:
+
+hfp/hfp_dtmf_handler.h:
+
+hfp/hfp_network_operator_handler.h:
+
+hfp/hfp_csr_features.h:
+
+hfp/hfp_caller_id_handler.h:
+
+hfp/hfp_hs_handler.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h:

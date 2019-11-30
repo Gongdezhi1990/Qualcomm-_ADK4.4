@@ -1,0 +1,32 @@
+<project buildenvironment="{6907f3f0-0ed4-11d8-be02-0050dadfe87d}" buildenvironmentname="kalimba" executionenvironmentoption="binutils" buildenvironmentoption="" executionenvironmentname="kalimba" executionenvironment="{2ca81310-0ecd-11d8-be02-0050dadfe87d}" >
+ <file path="codec_decoder.asm" />
+ <file path="celt_dec_config.asm" />
+ <file path="celt_frame_decode.asm" />
+ <file path="audio_processing.asm" />
+ <file path="music_example_config.asm" />
+ <file path="music_example_system.asm" />
+ <file path="user_eq.asm" />
+ <file path="vm_message.asm" />
+ <file path="codec_decoder.h" />
+ <file path="codec_tones.asm" />
+ <file path="codec_resample.asm" />
+ <file path="util.asm" />
+ <properties currentconfiguration="CNS10001-Release" >
+  <configuration name="CNS10001-Debug" >
+   <property key="bootstrap" >1</property>
+   <property key="buildMatch" >(?:(?:[a-zA-Z]:\\)?[^:]+\.o:)?(file):(line):</property>
+   <property key="debugtransport" >[SPITRANS=USB SPIPORT=0]</property>
+   <property key="defines" ></property>
+   <property key="hardware" >0</property>
+   <property key="libs" >core_c_support_debug, cbops_debug, math, codec, md_debug, audio_out_debug, sr_debug, frame_info, erasure_code_debug, csb_debug, bitwriter_debug, bitreader, sbc, system_time, scm, broadcast_status, celt, audio_proc, frame_sync</property>
+  </configuration>
+  <configuration name="CNS10001-Release" >
+   <property key="bootstrap" >1</property>
+   <property key="buildMatch" >(?:(?:[a-zA-Z]:\\)?[^:]+\.o:)?(file):(line):</property>
+   <property key="debugtransport" >[SPITRANS=USB SPIPORT=0]</property>
+   <property key="defines" ></property>
+   <property key="hardware" >0</property>
+   <property key="libs" >core_c_support, cbops, math, codec, md, audio_out, sr, frame_info, erasure_code, csb, bitwriter, bitreader, sbc, system_time, scm, broadcast_status, celt, audio_proc, frame_sync</property>
+  </configuration>
+ </properties>
+</project>

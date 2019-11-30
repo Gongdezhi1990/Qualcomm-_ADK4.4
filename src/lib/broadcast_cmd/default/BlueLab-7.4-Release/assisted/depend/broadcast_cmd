@@ -1,0 +1,121 @@
+broadcast_cmd/default/BlueLab-7.4-Release/assisted/broadcast_cmd.o:  \
+ broadcast_cmd/broadcast_cmd.c \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/scm.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/bdaddr.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/bluetooth.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection_no_ble.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb_.h \
+  broadcast_cmd/broadcast_cmd.h broadcast_cmd/broadcast_cmd_handler.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/broadcast.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/broadcast_context.h \
+  broadcast_cmd/broadcast_cmd_private.h \
+  broadcast_cmd/broadcast_cmd_debug.h
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/scm.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/bdaddr.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/bluetooth.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection_no_ble.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb_.h:
+
+broadcast_cmd/broadcast_cmd.h:
+
+broadcast_cmd/broadcast_cmd_handler.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/broadcast.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/broadcast_context.h:
+
+broadcast_cmd/broadcast_cmd_private.h:
+
+broadcast_cmd/broadcast_cmd_debug.h:

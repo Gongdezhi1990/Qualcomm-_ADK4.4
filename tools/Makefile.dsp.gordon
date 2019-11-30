@@ -1,0 +1,8 @@
+SUPPORTED_DSP_CORES += gordon
+KALASM3_CORES       += gordon
+KCC_C_LIBS          += gordon
+gordon_kalasm3_flags = -DGORDON -DKAL_ARCH3 -DKALASM3 -g -mchip=gordon
+gordon_kcc_flags     = -DGORDON -DKAL_ARCH3 -DKCC     -g -kcsr8670
+gordon_link_flags    = -DGORDON
+gordon_elf2kap_flags = -b
+gordon_arch_dir      = gordon

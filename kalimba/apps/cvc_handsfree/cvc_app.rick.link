@@ -1,0 +1,47 @@
+chip rick;
+
+/*   | Region Name                | Start Addr  | End Addr  | Type
+     +----------------------------+-------------+-----------+------- */
+region PM_REGION                    0x008008      0x00AFFF    CODE;
+region PM_CACHE                     0x00B000      0x00BFFF    CODE;
+region DM1_REGION                   0x001202      0x003FFF    DATA;
+region DM2_REGION                   0xFF4C02      0xFF6FFF    DATA;
+
+region DMFLASHWIN1_LARGE_REGION     0xD00000      0xDFFFFF    DATA;
+region DMFLASHWIN2_LARGE_REGION     0xE00000      0xEFFFFF    DATA;
+
+
+
+/*    | Overlay name                  | Region                    | Bit width
+      +-------------------------------+---------------------------+----------- */
+overlay flash.data16                    DMFLASHWIN1_LARGE_REGION    16;
+overlay flash.data24                    DMFLASHWIN2_LARGE_REGION    24;
+
+start $app_main;
+
+/*    | Segment Name                  | Options             | Priority   | Regions    
+      +-------------------------------+---------------------+------------+----------- */
+segment DM1CIRC                         circular              10           DM1_REGION;
+segment DM1                                                   20           DM1_REGION;
+segment DM2CIRC                         circular              10           DM2_REGION;
+segment DM2                                                   20           DM2_REGION;
+segment DMCIRC                          balanced,circular     30           DM1_REGION, DM2_REGION;
+segment DM                              balanced              40           DM1_REGION, DM2_REGION;
+segment (overlay info)                  balanced              40           DM1_REGION, DM2_REGION;
+segment DMCONST16                                             10           flash.data16;//DM1_REGION, DM2_REGION;//
+segment DMCONST                                               10           flash.data24;//DM2_REGION, DM1_REGION;//
+
+
+segment DM_STATIC                       balanced              30           DM1_REGION, DM2_REGION;   /* temporary fix for DM_STATIC       */
+segment DM1CIRC_SCRATCH                 circular              30           DM1_REGION;               /* temporary fix for DM1CIRC_SCRATCH */
+segment DM2CIRC_SCRATCH                 circular              30           DM2_REGION;               /* temporary fix for DM2CIRC_SCRATCH */
+segment DM_SCRATCH                      balanced              30           DM1_REGION, DM2_REGION;   /* temporary fix for DM_SCRATCH      */
+segment DM1_SCRATCH                                           30           DM1_REGION;               /* temporary fix for DM1_SCRATCH     */
+segment DM2_SCRATCH                                           30           DM2_REGION;               /* temporary fix for DM2_SCRATCH     */
+
+segment PM_ENTRYPT						        10		   PM_REGION;
+segment PM_RAM                                                30           PM_REGION;
+segment PM                                                    40           PM_REGION;
+
+
+

@@ -1,0 +1,12 @@
+asm_files = cbuffer_log.asm \
+
+header_files = cbuffer_log.h
+
+$(eval $(call header_rules,$(header_files)))
+
+$(eval $(call rules,$(asm_files)))
+
+# one line per variant...
+$(foreach hw,$(KAL_BASE_REG_CORES), \
+  $(eval $(call rules_variant_core,base_regs,$(FL_BASE_REG),$(asm_files),$(hw))) \
+)

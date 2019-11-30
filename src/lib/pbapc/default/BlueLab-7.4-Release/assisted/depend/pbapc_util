@@ -1,0 +1,14 @@
+pbapc/default/BlueLab-7.4-Release/assisted/pbapc_util.o:  \
+ pbapc/pbapc_util.c \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  pbapc/pbapc_util.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+pbapc/pbapc_util.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:

@@ -1,0 +1,20 @@
+asm_files = decrypt.asm \
+decryption_keys.asm \
+encrypt.asm \
+encryption_keys.asm \
+parameters.asm
+
+dummy_asm_files = dummy.asm \
+
+header_files = aes_library.h aes_library_c_stubs.h
+
+$(eval $(call header_rules,$(header_files)))
+
+$(eval $(call rules,$(asm_files)))
+
+# one line per variant...
+$(eval $(call rules_variant,debug,$(FL_DEBUG),$(asm_files)))
+$(eval $(call rules_variant,dummy,,$(dummy_asm_files)))
+$(foreach hw,$(KAL_BASE_REG_CORES), \
+  $(eval $(call rules_variant_core,base_regs,$(FL_BASE_REG),$(asm_files),$(hw))) \
+)

@@ -1,0 +1,180 @@
+
+<GlobalData>
+        <!-- child elements: 0 or 1 of any of {<DefineGroup>, <ConfigGroup>}; -->
+    <DefineGroup>
+        <!--Define Lists that can be used in both Pattern Headers and Pattern Bodies (and Generic Config Items and Groups for that matter)-->
+        <!--these are designed to remove the need for duplication of symbolic information-->
+        <DefineList
+            Id="User Event"
+            ShortId="g_user_event">
+                <!-- Note the leading 0x40 is stripped off below, as it is implied by them all being user events, not s-->
+                <!-- attributes: Id(M) -->
+                <!-- child elements: 1 or more of {<enum>}; -->
+            <enum key="..."
+                  value="0x00"/>
+                <!-- attributes: key(M = Mandatory),value(M),disable(O = Optional),desc(O) -->
+                <!-- key and value: must be unique for the entire <DefineList>; -->
+                <!-- value: can be either C hex format - regex(0x[0-9A-Fa-f]+) - or decimal; -->
+
+        </DefineList>
+
+        <DefineList
+            Id="System Event"
+            ShortId="g_system_event">
+                <!-- attributes: Id(M) -->
+                <!-- child elements: 1 or more of {<enum>}; -->
+            <enum key="...."
+                  value="0x0000"/>
+                <!-- attributes: key(M = Mandatory),value(M),disable(O = Optional),desc(O) -->
+                <!-- key and value: must be unique for the entire <DefineList>; -->
+                <!-- value: can be either C hex format - regex(0x[0-9A-Fa-f]+) - or decimal; -->
+            <enum key="Battery Low"
+                  value="0x4704"/>
+            <enum key="Battery Critical"
+                  value="0x470B"/>
+            <enum key="Gas Gauge 0"
+                  value="0x470D"/>
+            <enum key="Gas Gauge 1"
+                  value="0x470E"/>
+            <enum key="Gas Gauge 2"
+                  value="0x470F"/>
+            <enum key="Gas Gauge 3"
+                  value="0x4710"/>
+            <enum key="Charger Gas Gauge 0"
+                  value="0x4711"/>
+            <enum key="Charger Gas Gauge 1"
+                  value="0x4712"/>
+            <enum key="Charger Gas Gauge 2"
+                  value="0x4713"/>
+            <enum key="Charger Gas Gauge 3"
+                  value="0x4714"/>
+        </DefineList>
+    </DefineGroup>
+
+    <ConfigGroup Id="Audio" ShortId="audio" Node="Basic">
+		<ConfigGroup Id="Input Type"
+					 ShortId="Input_type"
+					 Node="Basic">
+		</ConfigGroup>
+    </ConfigGroup>
+
+    <ConfigGroup Id="Bluetooth" ShortId="bluetooth" Node="Basic">
+	
+        <ConfigGroup Id="Connection Management"
+                     ShortId="connection_management"
+                     Node="Basic">
+            <ConfigGroup Id="Pairing"
+                         ShortId="pairing"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Reconnection"
+                         ShortId="reconnection"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+		<ConfigGroup Id="Profiles"
+			 ShortId="Profiles"
+			 Node="Basic">
+			<ConfigGroup Id="Remote Device Bluetooth Address"
+				 ShortId="Remote_Device_Bluetooth_Address"
+				 Node="Basic">
+			</ConfigGroup>
+            <ConfigGroup Id="AVRCP"
+                         ShortId="avrcp"
+                         Node="Basic">
+            </ConfigGroup>
+
+            <ConfigGroup Id="A2DP"
+                         ShortId="a2dp_g"
+                         Node="Basic">
+						 <ConfigGroup Id="Codecs"
+							ShortId="Codecs"
+							Node="Basic">
+							<ConfigGroup Id="SBC"
+								ShortId="SBC"
+								Node="Basic">
+							</ConfigGroup>
+							<ConfigGroup Id="FastStream"
+								ShortId="FastStream"
+								Node="Basic">
+							</ConfigGroup>
+							<ConfigGroup Id="aptx"
+								ShortId="aptx"
+								Node="Basic">
+							</ConfigGroup>
+							<ConfigGroup Id="aptx low latency"
+								ShortId="aptx_low_latency"
+								Node="Basic">
+							</ConfigGroup>
+							<ConfigGroup Id="aptx hd"
+								ShortId="aptx_hd"
+								Node="Basic">
+							</ConfigGroup>
+						 </ConfigGroup>
+            </ConfigGroup>
+            <ConfigGroup Id="HFP"
+                         ShortId="hfp"
+                         Node="Basic">
+                    <ConfigGroup Id="SCO Packet Types"
+                                 ShortId="sco_packet_types"
+                                 Node="Basic">
+                    </ConfigGroup>
+                    <ConfigGroup Id="eSCO Packet Types"
+                                 ShortId="esco_packet_types"
+                                 Node="Basic">
+                    </ConfigGroup>
+                    <ConfigGroup Id="EDR Packet Types"
+                                 ShortId="edr_packet_types"
+                                 Node="Basic">
+                    </ConfigGroup>
+            </ConfigGroup>
+		</ConfigGroup>
+
+		<ConfigGroup Id="Dual Stream"
+			 ShortId="Dual_Stream"
+			 Node="Basic">
+			<ConfigGroup Id="DualStream 2nd Device Bluetooth Address"
+				 ShortId="DualStream_2nd_Device_Bluetooth_Address"
+				 Node="Basic">
+			</ConfigGroup>
+		</ConfigGroup>
+
+    </ConfigGroup>
+
+    <ConfigGroup Id="Battery" ShortId="battery" Node="Basic">
+        <ConfigGroup Id="Vref Reference Voltage Configuration"
+                     ShortId="vref_reference_voltage_config"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Vbat Battery Voltage Monitoring"
+                     ShortId="vbat_battery_voltage_monitoring"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Vthm Thermistor Configuration"
+                     ShortId="vthm_thermistor_configuration"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Vchg Charger Configuration"
+                     ShortId="vchg_charger_configuration"
+                     Node="Basic">
+        </ConfigGroup>
+    </ConfigGroup>
+
+    <ConfigGroup Id="Input/Output" ShortId="input_output" Node="Basic">
+        <ConfigGroup Id="Input PIOs"
+                     ShortId="input_pios"
+                     Node="Basic">
+        </ConfigGroup>
+    </ConfigGroup>
+
+    <ConfigGroup Id="System" ShortId="system" Node="Basic">
+        <ConfigGroup Id="Timers"
+                     ShortId="timers"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="USB Class of device"
+                     ShortId="USB_Class_of_device"
+                     Node="Basic">
+        </ConfigGroup>
+    </ConfigGroup>
+</GlobalData>

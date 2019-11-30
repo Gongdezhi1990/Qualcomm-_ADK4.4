@@ -1,0 +1,20 @@
+
+VARIANTS := plusv1 plusv2 lowram plusv1_debug debug
+
+# add debug
+CFLAGS_debug := -DDEBUG_ON
+
+# add pack
+CFLAGS_pack := -DUSE_PACKED_ENCODED_DATA
+
+# add sbr
+CFLAGS_plusv1 := -DAACDEC_SBR_ADDITIONS
+
+# add sbr + ps
+CFLAGS_plusv2 := -DAACDEC_SBR_ADDITIONS -DAACDEC_PARAMETRIC_STEREO_ADDITIONS
+
+# lowram variant
+CFLAGS_lowram := -DAAC_LOWRAM
+
+# add sbr and debug
+CFLAGS_plusv1_debug := -DAACDEC_SBR_ADDITIONS -DDEBUG_ON

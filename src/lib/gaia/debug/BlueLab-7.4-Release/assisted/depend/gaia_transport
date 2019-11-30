@@ -1,0 +1,176 @@
+gaia/debug/BlueLab-7.4-Release/assisted/gaia_transport.o:  \
+ gaia/gaia_transport.c gaia/gaia.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/bdaddr.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/bluetooth.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/gatt.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/upgrade.h \
+  gaia/gaia_private.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/gatt_manager.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/sppc.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/spp_common.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection_no_ble.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdio.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/lib/gcc-lib/xap-local-xap-assisted/3.3.3/include/stdarg.h \
+  gaia/gaia_transport.h gaia/gaia_transport_common.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/stream.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/transform_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/file/file_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/uart/uart_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/audio/audio_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_notes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio_plugin_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/power.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/adc.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/charger.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/charger/charger_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio_output.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio_instance.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source.h \
+  gaia/gaia_transport_spp.h gaia/gaia_transport_gatt.h
+
+gaia/gaia.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/bdaddr.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/bluetooth.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/gatt.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/upgrade.h:
+
+gaia/gaia_private.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/gatt_manager.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/sppc.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/spp_common.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/connection_no_ble.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/csb_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdio.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/lib/gcc-lib/xap-local-xap-assisted/3.3.3/include/stdarg.h:
+
+gaia/gaia_transport.h:
+
+gaia/gaia_transport_common.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/stream.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/transform_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/file/file_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/uart/uart_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/audio/audio_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_notes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio_plugin_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/power.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/adc.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/charger.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/charger/charger_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio_output.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/audio_instance.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source.h:
+
+gaia/gaia_transport_spp.h:
+
+gaia/gaia_transport_gatt.h:

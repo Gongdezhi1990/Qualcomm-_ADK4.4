@@ -1,0 +1,65 @@
+ \
+ audio_output/default/BlueLab-7.4-Release/assisted/audio_output_use_case.o:  \
+ audio_output/audio_output_use_case.c audio_output/audio_output.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/stream.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/transform_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/file/file_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/uart/uart_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/audio/audio_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_notes.h \
+  audio_output/audio_output_private.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h
+
+audio_output/audio_output.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/stream.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/transform_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/file/file_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/uart/uart_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/audio/audio_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/ringtone/ringtone_notes.h:
+
+audio_output/audio_output_private.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h:

@@ -1,0 +1,4 @@
+/* Linkscript for the Cbuffer Log library */
+
+segment CBUFFER_LOG_PM                                 40          PM_REGION;
+segment CBUFFER_LOG_DM                                 40          DM1_REGION, DM2_REGION;

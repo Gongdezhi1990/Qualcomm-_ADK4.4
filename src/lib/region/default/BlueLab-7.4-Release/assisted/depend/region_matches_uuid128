@@ -1,0 +1,10 @@
+region/default/BlueLab-7.4-Release/assisted/region_matches_uuid128.o:  \
+ region/region_matches_uuid128.c region/region.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h
+
+region/region.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:

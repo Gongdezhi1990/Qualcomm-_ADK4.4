@@ -1,0 +1,122 @@
+/******************************************************************************/
+/* Generic expanding styles */
+/******************************************************************************/
+#expand_and_collapse
+{
+    display:inline-block;
+    width:870px;
+    background:url(../img/title_bar.png) no-repeat;
+}
+#checkbox_label
+{
+    z-index:1;
+    position: absolute;
+    height:60px;
+    margin-left:50px;
+    margin-top:20px;
+    font-family: Arial, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: white;
+    font-weight: bold;
+}
+
+/******************************************************************************/
+/* Section headers where default is collapsed and can be expanded */
+/******************************************************************************/
+.expanding_checkbox input {
+    display: none;
+    margin:0;
+}
+.expanding_checkbox span {
+    display:inline-block;
+    width: 50px;
+    height: 60px;
+    display: block;
+    background: url(../img/expand_symbol.png);
+    margin:0;
+}
+.expanding_checkbox input[type=checkbox]:checked + span {
+    display:inline-block;
+    background: url(../img/collapse_symbol.png);
+    margin:0;
+}
+
+.expanding_checkbox span+span, .expandible {
+    display:none;
+    margin:0;
+}
+.expanding_checkbox input[type="checkbox"]:checked ~ .expandible {
+    display:inline-block;
+    padding-left:25px;
+    padding-right:25px;
+    margin:0;
+}
+
+/******************************************************************************/
+/* Section headers where default is expanded and can be collapsed */
+/******************************************************************************/
+.collapsing_checkbox input {
+    display: none;
+    margin:0;
+}
+.collapsing_checkbox span {
+    display:inline-block;
+    width: 50px;
+    height: 60px;
+    display: block;
+    background: url(../img/collapse_symbol.png);
+    margin:0;
+}
+.collapsing_checkbox input[type=checkbox]:checked + span {
+    display:inline-block;
+    background: url(../img/expand_symbol.png);
+    margin:0;
+}
+
+.collapsing_checkbox span+span, .collapsible {
+    display:inline-block;
+    padding-left:25px;
+    padding-right:25px;
+    margin:0;
+}
+.collapsing_checkbox input[type="checkbox"]:checked ~ .collapsible {
+    display:none;
+    margin:0;
+}
+
+/******************************************************************************/
+/* Styles for the expanded sections */
+/******************************************************************************/
+#expanded {
+    display:inline-block;
+    width:820px; 
+    background:url(../img/expanded_sides.png) repeat-y;
+    background-color:#f7f7f7;
+    margin:0;
+    padding-top:20px;
+    padding-left:20px;
+    padding-right:20px;
+    /* Prevent div from growing past defined width */
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    /* Draw a nice shadow */
+    -webkit-box-shadow: inset 0px 30px 51px -10px rgba(227,227,227,1);
+    -moz-box-shadow: inset 0px 30px 51px -10px rgba(227,227,227,1);
+    box-shadow: inset 0px 30px 51px -10px rgba(227,227,227,1);
+}
+
+#expanded_bottom{
+    display:inline-block;
+    width:820px;
+    height:20px;
+    background:url(../img/expanded_bottom.png) no-repeat;
+    background-color:#f7f7f7;
+    margin:0;
+    padding:0px;
+    
+}
+

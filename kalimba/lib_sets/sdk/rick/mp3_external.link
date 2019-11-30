@@ -1,0 +1,34 @@
+/* Linkscript for the MP3 library */
+
+segment MP3DEC_SKIP_THROUGH_FILE_PM                          40          PM_REGION, flash.code;
+segment MP3DEC_HUFF_GETVALREGION_PM                          40          PM_REGION, flash.code;
+segment MP3DEC_SYNTHESIS_FILTERBANK_PM                       40          PM_REGION, flash.code;
+segment MP3DEC_COMPENSATION_FOR_FREQ_INVERSION_PM            40          PM_REGION, flash.code;
+segment MP3DEC_GETBITRESBITS_PM                              40          PM_REGION, flash.code;
+segment MP3DEC_GETBITS_PM                                    40          PM_REGION, flash.code;
+segment MP3DEC_READ_HUFFMAN_PM                               40          PM_REGION, flash.code;
+segment MP3DEC_REQUANTISE_SUBBAND_PM                         40          PM_REGION, flash.code;
+segment MP3DEC_SUBBAND_RECONSTRUCTION_PM                     40          PM_REGION, flash.code;
+segment MP3DEC_ALIAS_REDUCTION_PM                            40          PM_REGION, flash.code;
+segment MP3DEC_FILLBITRES_PM                                 40          PM_REGION, flash.code;
+segment MP3DEC_HUFF_GETVALQUAD_PM                            40          PM_REGION, flash.code;
+segment MP3DEC_READ_SCALEFACTORS_PM                          40          PM_REGION, flash.code;
+segment MP3DEC_IMDCT_WINDOWING_OVERLAPADD_PM                 40          PM_REGION, flash.code;
+segment MP3DEC_FRAME_DECODE_PM                               40          PM_REGION, flash.code;
+segment MP3DEC_FAST_MS_DECODE_PM                             40          PM_REGION, flash.code;
+segment MP3DEC_READ_SIDEINFO_PM                              40          PM_REGION, flash.code;
+segment MP3DEC_REORDER_SPECTRUM_PM                           40          PM_REGION, flash.code;
+segment MP3DEC_READ_HEADER_PM                                40          PM_REGION, flash.code;
+segment MP3DEC_CRC_CHECK_PM                                  40          PM_REGION, flash.code;
+segment MP3DEC_GETBITS_AND_CRC_PM                            40          PM_REGION, flash.code;
+segment MP3DEC_INIT_DECODER_PM                               40          PM_REGION, flash.code;
+segment MP3DEC_JOINTSTEREO_PROCESSING_PM                     40          PM_REGION, flash.code;
+segment MP3DEC_INTENSITY_PROCESSOR_PM                        40          PM_REGION, flash.code;
+segment MP3DEC_RESET_DECODER_PM                              40          PM_REGION, flash.code;
+segment MP3DEC_SILENCE_DECODER_PM                            40          PM_REGION, flash.code;
+segment MP3DEC_RESTORE_BOUNDARY_SNAPSHOT_PM                  40          PM_REGION, flash.code;
+segment MP3DEC_STORE_BOUNDARY_SNAPSHOT_PM                    40          PM_REGION, flash.code;
+segment MP3DEC_DEINIT_DECODER_PM                             40          PM_REGION, flash.code;
+segment MP3DEC_C_STUBS_PM                                    40          PM_REGION, flash.code;
+segment MP3DEC_FF_REW_PM                                     40          PM_REGION, flash.code;
+segment MP3DEC_MAIN_PM                                       40          PM_REGION, flash.code;

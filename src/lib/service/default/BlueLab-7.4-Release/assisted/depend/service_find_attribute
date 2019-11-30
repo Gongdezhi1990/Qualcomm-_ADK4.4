@@ -1,0 +1,10 @@
+service/default/BlueLab-7.4-Release/assisted/service_find_attribute.o:  \
+ service/service_find_attribute.c service/service.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/region.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h
+
+service/service.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/region.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:

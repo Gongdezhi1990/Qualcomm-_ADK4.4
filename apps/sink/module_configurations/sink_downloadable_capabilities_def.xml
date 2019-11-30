@@ -1,0 +1,123 @@
+<ModuleData Name="sink_downloadable_capabilities">
+
+    <DefineGroup>
+        <DefineList 
+            ShortId="processor_type" 
+            Id="Processor Type">
+            <enum key="Available to Processor P0"
+                      value="1"
+                      desc="The bundle is only available on audio processor 0 ."/>
+            <enum key="Available to Processors P0 and P1"
+                      value="2"
+                      desc="The bundle is available on both audio processors."/>
+        </DefineList>
+    </DefineGroup>
+
+    <ConfigGroup
+        Id="Downloadable Capabilities"
+        ShortId="downloadable_caps"
+        Node="Basic">
+            <ConfigGroup
+                Id="Downloadables"
+                ShortId="downloadables"
+                Node="Basic"
+                ConfigGroupPath="./[@ShortId='downloadable_capabilities']">
+                <ConfigItem
+                    Id="Filename 1"
+                    ShortId="filename_1"
+                    Desc="bundle filename 1"
+                    ValidChars="^[\w\-.]+$"
+                    Type="AsciiString"
+                    DefaultValue=""
+                    MaxStrLenBytes="50">
+                    <BuildVariant HwVariant="CF376_CE692H3 CF376_H13732 R13568v4_A05" SwVariant="All" Value="download_aac_decode.dkcs"/>
+                </ConfigItem> 
+                <ConfigItem
+                    Id="Applicable Processor Type 1"
+                    ShortId="applicable_processor_type_1"
+                    Desc="The processors on which a downloadable capabilities bundle is available."
+                    Type="enum"
+                    DefaultValue="Available to Processor P0"
+                    Size="4">
+                    <List use="processor_type"/>     
+                </ConfigItem>    
+                <ConfigItem
+                    Id="Filename 2"
+                    ShortId="filename_2"
+                    Desc="bundle filename 2"
+                    ValidChars="^[\w\-.]+$"
+                    Type="AsciiString"
+                    DefaultValue=""
+                    MaxStrLenBytes="50">
+                    <BuildVariant HwVariant="CF376_CE692H3 CF376_H13732 R13568v4_A05" SwVariant="All" Value="download_celt.dkcs"/>
+                </ConfigItem>     
+                 <ConfigItem
+                    Id="Applicable Processor Type 2"
+                    ShortId="applicable_processor_type_2"
+                    Desc="The processors on which a downloadable capabilities bundle is available."
+                    Type="enum"
+                    DefaultValue="Available to Processor P0"
+                    Size="4">
+                    <List use="processor_type"/>    
+                  </ConfigItem>    
+                <ConfigItem
+                    Id="Filename 3"
+                    ShortId="filename_3"
+                    Desc="bundle filename 3"
+                    ValidChars="^[\w\-.]+$"
+                    Type="AsciiString"
+                    DefaultValue=""
+                    MaxStrLenBytes="50">
+                    <BuildVariant HwVariant="CF376_CE692H3 CF376_H13732 R13568v4_A05" SwVariant="All" Value="download_aptx_demux.dkcs"/>
+                </ConfigItem>     
+                <ConfigItem
+                    Id="Applicable Processor Type 3"
+                    ShortId="applicable_processor_type_3"
+                    Desc="The processors on which a downloadable capabilities bundle is available."
+                    Type="enum"
+                    DefaultValue="Available to Processor P0"
+                    Size="4">
+                    <List use="processor_type"/>        
+                </ConfigItem>   
+                    
+                <ConfigItem
+                    Id="Filename 4"
+                    ShortId="filename_4"
+                    Desc="bundle filename 4"
+                    ValidChars="^[\w\-.]+$"
+                    Type="AsciiString"
+                    DefaultValue=""
+                    MaxStrLenBytes="50">
+                    <BuildVariant HwVariant="CF376_CE692H3 CF376_H13732 R13568v4_A05" SwVariant="All" Value="download_switched_passthrough_consumer.dkcs"/>
+                </ConfigItem> 
+                <ConfigItem
+                    Id="Applicable Processor Type 4"
+                    ShortId="applicable_processor_type_4"
+                    Desc="The processors on which a downloadable capabilities bundle is available."
+                    Type="enum"
+                    DefaultValue="Available to Processor P0"
+                    Size="4">
+                    <List use="processor_type"/>  
+                 </ConfigItem>    
+                <ConfigItem
+                    Id="Filename 5"
+                    ShortId="filename_5"
+                    Desc="bundle filename 5"
+                    ValidChars="^[\w\-.]+$"
+                    Type="AsciiString"
+                    DefaultValue=""
+                    MaxStrLenBytes="50">
+                </ConfigItem>             
+                <ConfigItem
+                    Id="Applicable Processor Type 5"
+                    ShortId="applicable_processor_type_5"
+                    Desc="The processors on which a downloadable capabilities bundle is available."
+                    Type="enum"
+                    DefaultValue="Available to Processor P0"
+                    Size="4">
+                    <List use="processor_type"/>  
+                </ConfigItem>  
+            </ConfigGroup>
+    </ConfigGroup>
+     
+</ModuleData>

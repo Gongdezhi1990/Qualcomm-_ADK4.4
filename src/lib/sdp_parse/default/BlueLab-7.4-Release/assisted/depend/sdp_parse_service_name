@@ -1,0 +1,22 @@
+sdp_parse/default/BlueLab-7.4-Release/assisted/sdp_parse_service_name.o:  \
+ sdp_parse/sdp_parse_service_name.c sdp_parse/sdp_parse.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/service.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/region.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h
+
+sdp_parse/sdp_parse.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/service.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/region.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:

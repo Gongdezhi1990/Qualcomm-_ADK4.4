@@ -1,0 +1,7 @@
+region/default/BlueLab-7.4-Release/assisted/region_read_unsigned.o:  \
+ region/region_read_unsigned.c region/region.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h
+
+region/region.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:

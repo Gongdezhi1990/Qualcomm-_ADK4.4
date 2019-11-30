@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['sink_5fattributes_5fstr',['sink_attributes_str',['../structsink__attributes__str.html',1,'']]],
+  ['sink_5fbattery_5flimits',['sink_battery_limits',['../structsink__battery__limits.html',1,'']]],
+  ['sink_5fbattery_5fsetting',['sink_battery_setting',['../structsink__battery__setting.html',1,'']]],
+  ['sink_5fcharge_5fcurrent',['sink_charge_current',['../structsink__charge__current.html',1,'']]],
+  ['sink_5fcharge_5fsetting',['sink_charge_setting',['../structsink__charge__setting.html',1,'']]],
+  ['sink_5fcharge_5ftermination',['sink_charge_termination',['../structsink__charge__termination.html',1,'']]],
+  ['sink_5fdevice_5fid',['sink_device_id',['../structsink__device__id.html',1,'']]],
+  ['sink_5ffrom_5fhost_5fmsg_5ft',['sink_from_host_msg_T',['../structsink__from__host__msg___t.html',1,'']]],
+  ['sink_5fled_5fglobal_5fdata_5ft',['sink_led_global_data_t',['../structsink__led__global__data__t.html',1,'']]],
+  ['sink_5fpower_5fsettings',['sink_power_settings',['../structsink__power__settings.html',1,'']]],
+  ['sink_5ftest_5fevent_5fmsg_5ft',['SINK_TEST_EVENT_MSG_T',['../struct_s_i_n_k___t_e_s_t___e_v_e_n_t___m_s_g___t.html',1,'']]],
+  ['sink_5ftest_5fevent_5ft',['SINK_TEST_EVENT_T',['../struct_s_i_n_k___t_e_s_t___e_v_e_n_t___t.html',1,'']]],
+  ['sink_5ftest_5fstate_5ft',['SINK_TEST_STATE_T',['../struct_s_i_n_k___t_e_s_t___s_t_a_t_e___t.html',1,'']]],
+  ['slcdatatag',['slcDataTag',['../structslc_data_tag.html',1,'']]],
+  ['spp_5fdata',['spp_data',['../structspp__data.html',1,'']]],
+  ['stateslookup_5ft',['statesLookup_t',['../structstates_lookup__t.html',1,'']]],
+  ['sub_5fattributes',['sub_attributes',['../structsub__attributes.html',1,'']]]
+];

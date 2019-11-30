@@ -1,0 +1,102 @@
+ \
+ usb_device_class/no_mass_storage/BlueLab-7.4-Release/assisted/usb_device_class.o:  \
+ usb_device_class/usb_device_class.c \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/usb.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h \
+  usb_device_class/usb_device_class.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h \
+  usb_device_class/usb_device_audio.h \
+  usb_device_class/usb_device_battery_charging.h \
+  usb_device_class/usb_device_mass_storage.h \
+  usb_device_class/usb_device_hid.h \
+  usb_device_class/usb_device_class_private.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/sink_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/vm/vm_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/stream/stream_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/bluestack/types.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/limits.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/usb.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/usb/usb_if.h:
+
+usb_device_class/usb_device_class.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/message_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/message/system_message.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/adc/adc_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/capsense/capsense_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/partition/partition_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/infrared/infrared_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/validation/validation_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/source_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/app/status/status_if.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/operator_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/library.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/vmtypes.h:
+
+usb_device_class/usb_device_audio.h:
+
+usb_device_class/usb_device_battery_charging.h:
+
+usb_device_class/usb_device_mass_storage.h:
+
+usb_device_class/usb_device_hid.h:
+
+usb_device_class/usb_device_class_private.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:

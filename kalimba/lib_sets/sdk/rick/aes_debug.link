@@ -1,0 +1,8 @@
+/* Linkscript for the AES library */
+
+segment AES_ENCRYPT_FRAME_PM                                 40          PM_REGION;
+segment AES_DECRYPT_FRAME_PM                                 40          PM_REGION;
+segment AES_SET_ENCRYPTION_KEY_PM                            1000        PM_REGION, flash.code;
+segment AES_SET_DECRYPTION_KEY_PM                            1000        PM_REGION, flash.code;
+segment AES_DUMMY_PM                                         1000        PM_REGION, flash.code;
+segment AES_DM                       balanced                50          DM1_REGION, DM2_REGION;

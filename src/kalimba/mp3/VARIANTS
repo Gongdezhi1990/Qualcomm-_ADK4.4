@@ -1,0 +1,16 @@
+
+VARIANTS := flash zero_flash debug external
+
+VARIANTS_oxygen := base_regs
+
+# add sbr
+CFLAGS_flash := -DMP3DEC_USE_FLASH_FOR_CODE
+
+CFLAGS_zero_flash := -DMP3DEC_ZERO_FLASH
+
+CFLAGS_base_regs := -DBASE_REGISTER_MODE
+
+CFLAGS_debug := -DDEBUG_ON
+
+# The external variant allows allocation of variables/buffers by the application
+CFLAGS_external := -DMP3_USE_EXTERNAL_MEMORY

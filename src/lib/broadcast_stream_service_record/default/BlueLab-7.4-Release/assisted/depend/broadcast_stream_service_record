@@ -1,0 +1,12 @@
+ \
+ broadcast_stream_service_record/default/BlueLab-7.4-Release/assisted/broadcast_stream_service_record.o:  \
+ broadcast_stream_service_record/broadcast_stream_service_record.c \
+  broadcast_stream_service_record/broadcast_stream_service_record.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h
+
+broadcast_stream_service_record/broadcast_stream_service_record.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:

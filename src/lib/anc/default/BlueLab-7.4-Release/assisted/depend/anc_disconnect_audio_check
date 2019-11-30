@@ -1,0 +1,8 @@
+anc/default/BlueLab-7.4-Release/assisted/anc_disconnect_audio_check.o:  \
+ anc/anc_disconnect_audio_check.c \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  anc/anc_disconnect_audio_check.h
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+anc/anc_disconnect_audio_check.h:

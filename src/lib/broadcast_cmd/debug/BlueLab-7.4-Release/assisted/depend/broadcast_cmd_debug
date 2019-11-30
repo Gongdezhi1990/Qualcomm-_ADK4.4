@@ -1,0 +1,19 @@
+broadcast_cmd/debug/BlueLab-7.4-Release/assisted/broadcast_cmd_debug.o:  \
+ broadcast_cmd/broadcast_cmd_debug.c broadcast_cmd/broadcast_cmd_debug.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdio.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/lib/gcc-lib/xap-local-xap-assisted/3.3.3/include/stdarg.h
+
+broadcast_cmd/broadcast_cmd_debug.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/panic.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/profiles/BlueLab-7.4-Release/print.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdio.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/lib/gcc-lib/xap-local-xap-assisted/3.3.3/include/stdarg.h:

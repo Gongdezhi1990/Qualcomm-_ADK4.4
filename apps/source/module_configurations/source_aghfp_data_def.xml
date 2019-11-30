@@ -1,0 +1,262 @@
+<ModuleData Name="Source_aghfp_data">
+
+    <DefineGroup>
+        
+        <DefineStruct Id="aghfp audio params" ShortId="aghfp_audio_params" >
+            <ConfigItem
+                Id="Bandwidth_low"
+                ShortId="bandwidth_low"
+                Desc="The bandwidth is a 32 bit variable which is split into Bandwidth_low and bandwidth_high configuration item.This denotes the lower 16 bit bandwidth val."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Bandwidth_high"
+                ShortId="bandwidth_high"
+                Desc="The bandwidth is a 32 bit variable which is split into Bandwidth_low and bandwidth_high configuration item.This denotes the upper 16 bit bandwidth val."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Maximum Latency"
+                ShortId="max_latency"
+                Desc="This specifies the maximum latency to be used for setting up an eSCO/SCO connection."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Voice Settings"
+                ShortId="voice_settings"
+                Desc="This specifies the HFP 1.5 voice settings to be used for setting up an eSCO/SCO connection."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Retransmission Effort"
+                ShortId="retransmission_effort"
+                Desc="The Profile is recommended to set the Re-transmission effort according to the required quality and make the trade-off between power consumption and quality."
+                Type="enum"
+                Size="16">
+                <enum key="sync_retx_disabled"
+                      value="0"/>
+                <enum key="sync_retx_power_usage"
+                      value="1"/>
+                <enum key="sync_retx_link_quality"
+                      value="2"/>
+                <enum key="sync_retx_dont_care"
+                      value="3"/>
+            </ConfigItem>
+            <ConfigItem
+                Id="Override Wide Band Speech"
+                ShortId="hfpAudioOverrideWideBandSpeech"
+                Desc="This features enables the user to enable or disable the Wide Band speech if it is available."
+                Type="enum"
+                Size="16">
+				<enum key="Use WB-Speech if available"
+					  value="0"/>
+				<enum key="Don't use WB-Speech even if available"
+					  value="1"/>
+            </ConfigItem>
+        </DefineStruct>
+
+		<DefineStruct Id="hfp init params" ShortId="AGHFP_init_params" >
+            <ConfigStruct
+                Id="Hfp Audio Params"
+                ShortId="audio_params"
+                Desc="Audio Params structure"
+                Type="struct"
+                Struct="aghfp_audio_params"/>
+        </DefineStruct>
+    </DefineGroup>
+
+    <ConfigGroup Id="source hfp data" ShortId="source_aghfp_data_readonly"  Node="Basic"  >
+        <ConfigStruct
+            Id="AGHFP_init_params"
+            ShortId="hfp_initial_parameters"
+            Desc="This contains all hfp Initial parameters."
+            Type="struct"
+            Struct="AGHFP_init_params">
+            <StructElementConfigItem
+                Id="Hfp Audio Params"
+                Desc="Audio Params structure"
+                ShortId="audio_params">
+                <StructElementConfigItem
+                    Id="Bandwidth_low"
+                    Desc="The bandwidth is a 32 bit variable which is split into Bandwidth_low and bandwidth_high configuration item.This denotes the lower 16 bit bandwidth val."
+                    ShortId="bandwidth_low"
+                    DefaultValue="0x1f40"
+                    ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']"/>
+                <StructElementConfigItem
+                    Id="Bandwidth_high"
+                    Desc="The bandwidth is a 32 bit variable which is split into Bandwidth_low and bandwidth_high configuration item.This denotes the upper 16 bit bandwidth val."
+                    ShortId="bandwidth_high"
+                    DefaultValue="0"
+                    ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']"/>
+                <StructElementConfigItem
+                    Id="Maximum Latency"
+                    Desc="This specifies the maximum latency to be used for setting up an eSCO/SCO connection."
+                    ShortId="max_latency"
+                    DefaultValue="0x0c"
+                    ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']"/>
+                <StructElementConfigItem
+                    Id="Voice Settings"
+                    Desc="This specifies the HFP 1.5 voice settings to be used for setting up an eSCO/SCO connection."
+                    ShortId="voice_settings"
+                    DefaultValue="0x00"
+                    ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']"/>
+                <StructElementConfigItem
+                    Id="Retransmission Effort"
+                    Desc="The Profile is recommended to set the Re-transmission effort according to the required quality and make the trade-off between power consumption and quality."
+                    ShortId="retransmission_effort"
+                    DefaultValue="sync_retx_link_quality"
+                    ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']"/>
+                <StructElementConfigItem
+                    Id="Override Wide Band Speech"
+                    Desc="This features enables the user to enable or disable the Wide Band speech if it is available."
+                    ShortId="hfpAudioOverrideWideBandSpeech"
+                    DefaultValue="Use WB-Speech if available"
+                    ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']"/>
+            </StructElementConfigItem>
+        </ConfigStruct>
+		<ConfigItem
+            Id="AGHFP Maximum Connection Retries"
+            ShortId="AGHFPMaxContRetries"
+            Desc="Number of times the source will attempt to reconnect the AGHFP profile whenever the AGHFP connection fails."
+            Type="uint"
+            Size="16"
+            DefaultValue="0x0002"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='reconnection']">
+		</ConfigItem>
+    </ConfigGroup>
+
+	<ConfigGroup Id="SYNC packet" ShortId="sync_packet" Node="Basic">
+		<ConfigItem
+			Id="2EV3 Enable"
+			ShortId="edr2ev3disable"
+			Desc="edr 2ev3 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="false"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='edr_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="3EV3 Disable"
+			ShortId="edr3ev3disable"
+			Desc="edr 3ev3 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='edr_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="2EV5 Disable"
+			ShortId="edr2ev5disable"
+			Desc="edr 2ev5 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='edr_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="3EV5 Disable"
+			ShortId="edr3ev5disable"
+			Desc="edr 3ev5 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='edr_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="EV3 Enable"
+			ShortId="ESCOev3enable"
+			Desc="esco ev3 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='esco_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="EV4 Enable"
+			ShortId="ESCOev4enable"
+			Desc="esco ev4 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="false"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='esco_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="EV5 Enable"
+			ShortId="ESCOev5enable"
+			Desc="esco ev5 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="false"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='esco_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="HV1 Enable"
+			ShortId="SCOhv1enable"
+			Desc="sco hv1 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='sco_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="HV2 Enable"
+			ShortId="SCOhv2enable"
+			Desc="sco hv2 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='sco_packet_types']">
+		</ConfigItem>
+		<ConfigItem
+			Id="HV3 Enable"
+			ShortId="SCOhv3enable"
+			Desc="sco hv3 packet type"
+			Type="bool"
+			Size="1"
+			DefaultValue="true"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']/[@ShortId='sco_packet_types']">
+		</ConfigItem>
+	</ConfigGroup>
+
+    <ConfigGroup
+	    Id="AGHFP WRITABLE DATA"
+        ShortId="source_aghfp_writable_data"
+        Node="Basic">
+        <ConfigItem
+            Id="HFP Profile"
+            ShortId="hfpProfile"
+			Desc="This feature enables the user to either disable the HFP profile or enable the HFP 1.6 or HFP 1.7 profile feature."
+            Type="enum"
+			Size="3"
+            DefaultValue="HFP 1.7 Enabled"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='hfp']">
+					<enum key="Disabled"
+						  value="0"/>
+					<enum key="HFP 1.6 Enabled"
+						  value="1"/>
+					<enum key="HFP 1.7 Enabled"
+						  value="2"/>
+		</ConfigItem>
+			<ConfigItem
+				Id="AGHFP Connection Failed [s]"
+				ShortId="AGHFPConnectionFailed_s"
+				Desc="Time to wait before retrying to connect AGHFP, after a failed AGHFP connection attempt, in seconds."
+				Type="uint"
+				Size="16"
+				DefaultValue="0x07D0"
+				ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']">
+			</ConfigItem>
+	</ConfigGroup>	
+	<ConfigGroup
+		Id="Number Of Entries for AGHFP"
+		ShortId="number_of_entries_AGHFP"
+		Node="Expert">
+		<ConfigItem
+			Id="AGHFP ENTRIES"
+			ShortId="aghfp_entries"
+			Desc="."
+			Type="uint"
+			Size="8"
+			DefaultValue="0x00"/>
+	</ConfigGroup>
+</ModuleData>

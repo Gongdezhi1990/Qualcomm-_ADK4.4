@@ -1,0 +1,33 @@
+<project buildenvironment="{6907f3f0-0ed4-11d8-be02-0050dadfe87d}" buildenvironmentname="kalimba" executionenvironmentoption="binutils" buildenvironmentoption="" executionenvironmentname="kalimba" executionenvironment="{2ca81310-0ecd-11d8-be02-0050dadfe87d}" >
+ <file path="celt_enc_config.asm" />
+ <file path="codec_encoder.asm" />
+ <file path="sbc_frame_decode.asm" />
+ <file path="celt_frame_encode.asm" />
+ <file path="audio_processing.asm" />
+ <file path="music_example_config.asm" />
+ <file path="music_example_system.asm" />
+ <file path="user_eq.asm" />
+ <file path="vm_message.asm" />
+ <file path="codec_encoder.h" />
+ <file path="codec_tones.asm" />
+ <file path="codec_resample.asm" />
+ <file path="util.asm" />
+ <properties currentconfiguration="CNS10001-Release" >
+  <configuration name="CNS10001-Debug" >
+   <property key="bootstrap" >1</property>
+   <property key="buildMatch" >(?:(?:[a-zA-Z]:\\)?[^:]+\.o:)?(file):(line):</property>
+   <property key="debugtransport" >[SPITRANS=USB SPIPORT=0]</property>
+   <property key="defines" >SELECTED_DECODER_SBC</property>
+   <property key="hardware" >0</property>
+   <property key="libs" >core_c_support_debug, cbops_debug, codec, math, sbc, sr_debug, md_debug, cbuffer_log, ttp_debug, audio_out_debug, erasure_code_debug, csb_debug, analogue_input, usb_input, rtp_input_debug, frame_info, scm, bitwriter_debug, system_time, broadcast_status, celt, audio_proc, frame_sync</property>
+  </configuration>
+  <configuration name="CNS10001-Release" >
+   <property key="bootstrap" >1</property>
+   <property key="buildMatch" >(?:(?:[a-zA-Z]:\\)?[^:]+\.o:)?(file):(line):</property>
+   <property key="debugtransport" >[SPITRANS=USB SPIPORT=0]</property>
+   <property key="defines" >SELECTED_DECODER_SBC</property>
+   <property key="hardware" >0</property>
+   <property key="libs" >core_c_support, cbops, codec, math, sbc, sr, md, cbuffer_log, ttp, audio_out, erasure_code, csb, analogue_input, usb_input, rtp_input, frame_info, scm, bitwriter, system_time, broadcast_status, celt, audio_proc, frame_sync</property>
+  </configuration>
+ </properties>
+</project>

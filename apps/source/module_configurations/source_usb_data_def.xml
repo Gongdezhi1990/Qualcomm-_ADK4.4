@@ -1,0 +1,66 @@
+<ModuleData Name="Source_usb">
+	<ConfigGroup
+        Id="Source USB Configuration"
+        ShortId="Source_USB_Configs_Values"
+        Node="Basic">
+		<ConfigGroup
+			ShortId="USB_Class_of_Device"
+			Id="USB classes of device"
+			Node="Basic">
+			<ConfigItem
+				Id="HID Keyboard Interface"
+				ShortId="usbHidKeybInterface"
+				Desc="This feature enables the user to enable or disable the USB keyboard interface feature."
+				Type="bool"
+				DefaultValue="true"
+				Size="1"
+				ConfigGroupPath="./[@ShortId='system']/[@ShortId='USB_Class_of_device']">
+			</ConfigItem>
+			<ConfigItem
+				Id="HID Consumer Interface"
+				ShortId="usbHidConsumerInterface"
+				Desc="This feature enables the user to enable or disable the USB Consumer interface feature."
+				Type="bool"
+				DefaultValue="true"
+				Size="1"
+				ConfigGroupPath="./[@ShortId='system']/[@ShortId='USB_Class_of_device']">
+			</ConfigItem>
+			<ConfigItem
+				Id="Mic Interface"
+				ShortId="usbMicInterface"
+				Desc="This feature enables the user to enable or disable the USB Mic interface feature."
+				Type="bool"
+				DefaultValue="true"
+				Size="1"
+				ConfigGroupPath="./[@ShortId='system']/[@ShortId='USB_Class_of_device']">
+			</ConfigItem>
+			<ConfigItem
+				Id="Speaker Interface"
+				ShortId="usbSpeakerInterface"
+				Desc="This feature enables the user to enable or disable the USB Speaker interface feature."
+				Type="bool"
+				DefaultValue="true"
+				Size="1"
+				ConfigGroupPath="./[@ShortId='system']/[@ShortId='USB_Class_of_device']">
+			</ConfigItem>
+		</ConfigGroup>
+		<ConfigItem
+			Id="USB Audio Active [s]"
+			ShortId="USBAudioActive_s"
+			Desc="Time to keep audio active after USB interfaces report that no audio is present. The maximum value, 65535, indicates that audio is always active."
+			Type="uint"
+			DefaultValue="0xFFFF"
+			Size="16"
+			ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']">
+		</ConfigItem>
+		<ConfigItem
+			Id="Media Repeat [ms]"
+			ShortId="MediaRepeat_ms"
+			Desc="Time to wait for a repeat of the AVRCP media button pressed event, before treating the media button as released (i.e. for fast forward and rewind events)."
+			Type="uint"
+			DefaultValue="500"
+			Size="16"
+			ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']">
+		</ConfigItem>
+	</ConfigGroup>
+</ModuleData>

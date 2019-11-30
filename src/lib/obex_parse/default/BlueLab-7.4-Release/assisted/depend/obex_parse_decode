@@ -1,0 +1,16 @@
+obex_parse/default/BlueLab-7.4-Release/assisted/obex_parse_decode.o:  \
+ obex_parse/obex_parse_decode.c \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h \
+  obex_parse/obex_parse_internal.h obex_parse/obex_parse.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/string.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:
+
+obex_parse/obex_parse_internal.h:
+
+obex_parse/obex_parse.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/stdlib.h:

@@ -1,0 +1,70 @@
+<ModuleData Name="Source_avrcp">
+    <ConfigGroup
+        ShortId="source_avrcp_readonly"
+        Id="AVRCP Enable and Audio Switching Mask Bitfields"
+        Node="Basic">
+        <ConfigItem
+            Id="AVRCP Vendor Enable"
+            ShortId="featuresAvrcpVendorEnable"
+            Desc="This feature enables the user to enable or disable the AVRCP vendor option."
+            Type="bool"
+            DefaultValue="true"
+            Size="1"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='avrcp']">
+		</ConfigItem>
+		<ConfigItem
+            Id="AVRCP Vendor Command Company Identifier"
+            ShortId="company_id"
+            Desc="This feature sets the AVRCP vendor command company identifier value."
+            Type="uint"
+            Size="16"
+			DefaultValue="0x0A12"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='avrcp']">
+        </ConfigItem>
+        <ConfigItem
+            Id="AVRCP Maximum Connection Retries"
+            ShortId="AVRCPMaxContRetries"
+            Desc="Number of times the source will attempt to reconnect the AVRCP profile."
+            Type="uint"
+            Size="16"
+            DefaultValue="0x0003"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='reconnection']">
+		</ConfigItem>
+    </ConfigGroup>
+    <ConfigGroup
+	    Id="ACRCP WRITABLE DATA"
+        ShortId="source_avrcp_writable_data"
+        Node="Basic">
+        <ConfigItem
+            Id="AVRCP Profile"
+            ShortId="avrcpProfile"
+			Desc="This feature enables the user to either enable AVRCP profile or disable the profile itself."
+            Type="enum"
+			Size="2"
+            DefaultValue="AVRCP 1.0 Enabled"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='avrcp']">
+				<enum key="Disabled"
+					value="0"/>
+				<enum key="AVRCP 1.0 Enabled"
+					value="1"/>
+		</ConfigItem>
+        <ConfigItem
+			Id="AVRCP Connection Delay [s]"
+			ShortId="AVRCPConnectionDelay_s"
+			Desc="Time to wait before connecting AVRCP, after a successful  AVRCP connection, in seconds."
+			Type="uint"
+			Size="16"
+			DefaultValue="0x0BB8"
+			ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']">
+		</ConfigItem>
+        <ConfigItem
+			Id="AVRCP Connection Failed [ms]"
+			ShortId="AVRCPConnectionFailed_s"
+			Desc="Time to wait before retrying to connect AVRCP, after a failed AVRCP connection attempt, in seconds."
+			Type="uint"
+			Size="16"
+			DefaultValue="0x07D0"
+			ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']">
+		</ConfigItem>
+	</ConfigGroup>
+</ModuleData>

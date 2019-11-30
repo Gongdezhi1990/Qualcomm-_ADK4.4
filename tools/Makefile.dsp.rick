@@ -1,0 +1,8 @@
+SUPPORTED_DSP_CORES += rick
+KALASM3_CORES       += rick
+KCC_C_LIBS          += rick
+rick_kalasm3_flags   = -DRICK -DKAL_ARCH5 -DKALASM3 -g -mchip=rick
+rick_kcc_flags       = -DRICK -DKAL_ARCH5 -DKCC     -g -kcsr8675
+rick_link_flags      = -DRICK
+rick_elf2kap_flags   = -b
+rick_arch_dir        = rick

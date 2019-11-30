@@ -1,0 +1,14 @@
+c_files =
+
+asm_files = broadcast_msg_interface.asm
+
+header_files = broadcast_msg_interface.h
+
+vm_header_files = broadcast_msg_interface.h
+
+exported_symbols =
+
+$(eval $(call header_rules,$(header_files)))
+$(eval $(call rules,$(asm_files)))
+$(eval $(call vm_header_rules,$(vm_header_files)))
+

@@ -1,0 +1,6 @@
+
+VARIANTS := debug pts_test 
+
+CFLAGS_debug := -DGATT_DEBUG_LIB
+CFLAGS_pts_test := -DGATT_PTS_TEST
+

@@ -1,0 +1,645 @@
+
+<GlobalData>
+        <!-- child elements: 0 or 1 of any of {<DefineGroup>, <ConfigGroup>}; -->
+    <DefineGroup>
+        <!--Define Lists that can be used in both Pattern Headers and Pattern Bodies (and Generic Config Items and Groups for that matter)-->
+        <!--these are designed to remove the need for duplication of symbolic information-->
+        <DefineList 
+            Id="User Event" 
+            ShortId="g_user_event">
+                <!-- Define Lists that can be used in both Pattern Headers and Pattern Bodies (and Generic Config Items and Groups for that matter), and help to remove the need for duplication of symbolic information. -->
+                <!-- Note the leading 0x40 is stripped off below, as it is implied by them all being user events, not s-->
+                <!-- attributes: Id(M) -->
+                <!-- child elements: 1 or more of {<enum>}; -->
+            <enum key="..."
+                  value="0x00"/>
+                <!-- attributes: key(M = Mandatory),value(M),disable(O = Optional),desc(O) -->
+                <!-- key and value: must be unique for the entire <DefineList>; -->
+                <!-- value: can be either C hex format - regex(0x[0-9A-Fa-f]+) - or decimal; -->
+            <enum key="Config Proto - User Event 1"
+                  value="0x01"/>
+            <enum key="Config Proto - User Event 2"
+                  value="0x02"/>
+        </DefineList>
+        <DefineList 
+            Id="System Event" 
+            ShortId="g_system_event">
+                <!-- Define Lists that can be used in both Pattern Headers and Pattern Bodies (and Generic Config Items and Groups for that matter), and help to remove the need for duplication of symbolic information. -->
+                <!-- Note the leading 0x40 is stripped off below, as it is implied by them all being user events, not s-->
+                <!-- attributes: Id(M) -->
+                <!-- child elements: 1 or more of {<enum>}; -->
+            <enum key="..."
+                  value="0x00"/>
+                <!-- attributes: key(M = Mandatory),value(M),disable(O = Optional),desc(O) -->
+                <!-- key and value: must be unique for the entire <DefineList>; -->
+                <!-- value: can be either C hex format - regex(0x[0-9A-Fa-f]+) - or decimal; -->
+            <enum key="Config Proto - System Event 1"
+                  value="0x01"/>
+            <enum key="Config Proto - System Event 2"
+                  value="0x02"/>
+        </DefineList>
+
+        <!-- Example of merged lists into one list, one with 
+            a prefix.
+        -->
+        <DefineList 
+            Id="All Events" 
+            ShortId="g_all_events">
+                <List use="g_user_event" />
+                <List use="g_system_event" prefix="0x40"/>
+        </DefineList>
+        
+        <!-- Example of globally defined DefineLists that are
+            referenced from the global config
+        -->
+        <DefineList Id="Global Options" ShortId="g_options">
+            <enum key="Global Option A" value="0x01" />
+            <enum key="Global Option B" value="0x02" />
+            <enum key="Global Option C" value="0x03" />
+            <enum key="Global Option D" value="0x04" />
+        </DefineList>
+        
+        <DefinePattern
+            PatternName="Example Global Pattern A"
+            ShortId="g_example_global_pattern_a">
+                <!-- attributes: PatternName(M); -->
+                <!-- child elements: 1 or more <ConfigItem>; -->
+            <ConfigItem
+                Id="Global Pattern A uint"
+                ShortId="pattern_a_uint"
+                Desc="Pattern index example."
+                Type="uint"
+                Size="16" />
+            <ConfigItem
+                Id="Global Pattern A ulong"
+                ShortId="pattern_a_ulong"
+                Desc="Pattern ulong example."
+                Type="ulong"
+                Size="32" />
+            <ConfigItem
+                Id="Global Pattern A Options"
+                ShortId="pattern_a_options"
+                Desc="Option bitfield mask example."
+                Type="bitfield"
+                PresentHex="true"
+                Size="5">
+                <bitfield
+                    key="Elephants"
+                    value="1" />
+                <bitfield
+                    key="Giraffes"
+                    value="2" />
+                <bitfield
+                    key="Zebras"
+                    value="3" />
+                <bitfield
+                    key="Crocodiles"
+                    value="4" />
+            </ConfigItem>
+            <ConfigItem
+                Id="Global Pattern A bool"
+                ShortId="pattern_a_bool"
+                Desc="Boolean example."
+                Type="bool"
+                Size="1" />
+        </DefinePattern>
+
+    </DefineGroup>
+
+    <ConfigGroup Id="Audio" ShortId="audio" Node="Basic">
+            <!-- attributes: Id(M),Node(M); -->
+            <!-- Node: can be Basic, Array or AudioPrompts; -->
+            <!-- child elements for Node is Basic: 1 or more of any of {<ConfigGroup><ConfigItem>}; -->
+            <!-- child elements for Node is Array: exactly 1 <ConfigPatternArray>; -->
+            <!-- child elements for Node is AudioPrompts: 1 <ConfigPatternArray> followed by 2 <ConfigItem> -->
+        <ConfigGroup
+            Id="I2S"
+            ShortId="i2s"
+            Node="Basic">
+            <ConfigGroup
+                Id="I2C Control for External I2S Amplifier"
+                ShortId="i2c_control_for_external_i2s_amp"
+                Node="Basic">
+                <ConfigGroup
+                    Id="Raw Command Data"
+                    ShortId="raw_command_data"
+                    Node="Array">
+                </ConfigGroup>
+                <ConfigGroup
+                    Id="Initialisation"
+                    ShortId="initialisation"
+                    Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup
+                    Id="Volume"
+                    ShortId="volume"
+                    Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup
+                    Id="Shutdown"
+                    ShortId="shutdown"
+                    Node="Basic">
+                </ConfigGroup>
+            </ConfigGroup>
+        </ConfigGroup>
+
+        <ConfigGroup
+            Id="Voice Microphone and Line Input"
+            ShortId="voice_microphone_and_line_input"
+            Node="Basic">
+            <ConfigGroup
+                Id="Voice Microphone A Parameters"
+                ShortId="voice_microphone_a_parameters"
+                Node="Basic">
+                <ConfigGroup Id="Voice Mic A Drive PIO"
+                             ShortId="voice_mic_a_drive_pio"
+                             Node="Basic">
+                </ConfigGroup>
+            </ConfigGroup>
+            <ConfigGroup Id="Voice Microphone B Parameters" 
+                         ShortId="voice_microphone_b_parameters"
+                         Node="Basic">
+                <ConfigGroup Id="Voice Mic B Drive PIO"
+                             ShortId="voice_mic_b_drive_pio"
+                             Node="Basic">
+                </ConfigGroup>
+            </ConfigGroup>
+            <ConfigGroup Id="Line A Parameters"
+                         ShortId="line_a_parameters"
+                         Node="Basic">
+                <ConfigGroup Id="Line A Drive PIO"
+                             ShortId="line_a_prive_pio"
+                             Node="Basic">
+                </ConfigGroup>
+            </ConfigGroup>
+            <ConfigGroup Id="Line B Parameters"
+                         ShortId="line_b_parameters"
+                         Node="Basic">
+                <ConfigGroup Id="Line B Drive PIO"
+                             ShortId="line_b_drive_pio"
+                             Node="Basic">
+                </ConfigGroup>
+            </ConfigGroup>
+        </ConfigGroup>
+
+        <ConfigGroup Id="Routing" ShortId="routing" Node="Basic">
+            <ConfigGroup Id="Multi-channel Plugin"
+                         ShortId="multi_channel_plugin"
+                         Node="Basic">
+                <ConfigGroup
+                    Id="Digital Interface 0"
+                    ShortId="digital_interface_0"
+                    Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup
+                    Id="Digital Interface 1"
+                    ShortId="digital_interface_1"
+                    Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup
+                    Id="Analogue Interface"
+                    ShortId="analogue_interface"
+                    Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup
+                    Id="Volume &amp; Gain"
+                    ShortId="volume_gain"
+                    Node="Basic">
+                    <ConfigGroup
+                        Id="Primary/Secondary/Sub"
+                        ShortId="primary_secondary_sub"
+                        Node="Basic">
+                        <ConfigGroup
+                            Id="Volume Curve"
+                            ShortId="volume_curve"
+                            Node="Basic">    
+                        </ConfigGroup>
+                    </ConfigGroup>
+                </ConfigGroup>
+            </ConfigGroup>
+            <ConfigGroup Id="Audio Plugin Features"
+                         ShortId="audio_plugin_features"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="SPDIF Configuration"
+                         ShortId="spdif_configuration"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Silence Detection Features"
+                         ShortId="silence_detection_features"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="USB" ShortId="usb" Node="Basic">
+            <ConfigGroup Id="Class of Device"
+                         ShortId="class_of_device"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="Volume Control"
+                     ShortId="volume_control"
+                     Node="Basic">
+            <ConfigGroup Id="Voice"
+                         ShortId="voice"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+
+    <ConfigGroup Id="Bluetooth" ShortId="bluetooth" Node="Basic">
+        <ConfigGroup Id="Link Control"
+                     ShortId="link_control"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Qualification"
+                     ShortId="qualification"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Connection Management"
+                     ShortId="connection_management"
+                     Node="Basic">
+            <ConfigGroup Id="at Power On"
+                         ShortId="at_power_on"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Pairing"
+                         ShortId="pairing"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Connection"
+                         ShortId="connection"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Discovery"
+                         ShortId="discovery"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Reconnection"
+                         ShortId="reconnection"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="RSSI Parameters"
+                         ShortId="rssi_parameters"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="BR/EDR Profiles"
+                     ShortId="br_edr_profiles"
+                     Node="Basic">
+            <ConfigGroup Id="AVRCP"
+                         ShortId="avrcp"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="A2DP"
+                         ShortId="a2dp"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="PBAP"
+                         ShortId="pbap"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="HFP"
+                         ShortId="hfp"
+                         Node="Basic">
+                <ConfigGroup Id="Call Control"
+                             ShortId="call_control"
+                             Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Supported Features"
+                             ShortId="supported_features"
+                             Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="CSR Supported Features"
+                             ShortId="csr_supported_features"
+                             Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Audio Parameters"
+                             ShortId="audio_parameters"
+                             Node="Basic">
+                    <ConfigGroup Id="SCO Packet Types"
+                                 ShortId="sco_packet_types"
+                                 Node="Basic">
+                    </ConfigGroup>
+                    <ConfigGroup Id="eSCO Packet Types"
+                                 ShortId="esco_packet_types"
+                                 Node="Basic">
+                    </ConfigGroup>
+                    <ConfigGroup Id="EDR Packet Types"
+                                 ShortId="edr_packet_types"
+                                 Node="Basic">
+                    </ConfigGroup>
+                </ConfigGroup>
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="BLE Profiles"
+                     ShortId="ble_profiles"
+                     Node="Basic">
+            <ConfigGroup Id="BLE Advertising Report Filters"
+                         ShortId="ble_advertising_report_filters"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Find Me"
+                         ShortId="find_me"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Proximity"
+                         ShortId="proximity"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+
+    <ConfigGroup Id="Battery" ShortId="battery" Node="Basic">
+        <ConfigGroup Id="Vref Reference Voltage Configuration"
+                     ShortId="vref_reference_voltage_config"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Vbat Battery Voltage Monitoring"
+                     ShortId="vbat_battery_voltage_monitoring"
+                     Node="Basic">
+            <ConfigGroup Id="Vbat Threshold Settings"
+                         ShortId="vbat_threshold_settings"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="Vthm Thermistor Configuration"
+                     ShortId="vthm_thermistor_configuration"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Vchg Charger Configuration"
+                     ShortId="vchg_charger_configuration"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Charger Configuration"
+                     ShortId="charger_configuration"
+                     Node="Array">
+        </ConfigGroup>
+        <ConfigGroup Id="USB Charger"
+                     ShortId="usb_charger"
+                     Node="Array">
+        </ConfigGroup>
+        <ConfigGroup Id="PMU Charger Monitor"
+                     ShortId="pmu_charger_monitor"
+                     Node="Basic">
+        </ConfigGroup>
+    </ConfigGroup>
+
+    <ConfigGroup
+        Id="Device and Software Version" 
+        ShortId="device_and_software_version" 
+        Node="Basic">
+    </ConfigGroup>
+    <ConfigGroup
+        Id="Input/Output"
+        ShortId="input_output"
+        Node="Basic">
+        <ConfigGroup Id="Input PIOs"
+                     ShortId="input_pios"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Output PIOs"
+                     ShortId="output_pios"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="PIO Invert Mask Bitfields"
+                     ShortId="pio_invert_mask_bitfields"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="PIO Mapping Assignments"
+                     ShortId="pio_mapping_assignments"
+                     Node="Basic">
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup Id="Peer Device Support" 
+                 ShortId="peer_device_support" 
+                 Node="Basic">
+        <ConfigGroup Id="Custom Peer Device Service UUID"
+                     ShortId="custom_peer_device_service_uuid"
+                     Node="Array">
+        </ConfigGroup>
+        <ConfigGroup Id="ShareMe"
+                     ShortId="shareme"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="True Wireless Stereo"
+                     ShortId="true_wireless_stereo"
+                     Node="Basic">
+            <ConfigGroup Id="Audio Routing"
+                         ShortId="audio_routing"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="Device Trim"
+                         ShortId="device_trim"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup
+        Id="Remote Control" 
+        ShortId="remote_control"
+        Node="Basic">
+        <ConfigGroup Id="Input Manager Look-up Table"
+                     ShortId="input_manager_lookup_table"
+                     Node="Array">
+        </ConfigGroup>
+        <ConfigGroup Id="IR Input Monitor"
+                     ShortId="ir_input_monitor"
+                     Node="Basic">
+            <ConfigGroup Id="IR Input Monitor Look-up Table"
+                         ShortId="ir_input_monitor_lookup_table"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="BLE Input Monitor"
+                     ShortId="ble_input_monitor"
+                     Node="Basic">
+            <ConfigGroup Id="BLE Input Monitor Look-up Table"
+                         ShortId="ble_input_monitor_lookup_table"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup Id="System"
+                 ShortId="system"
+                 Node="Basic">
+        <ConfigGroup Id="Timers"
+                     ShortId="timers"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="PS Store"
+                     ShortId="ps_store"
+                     Node="Basic">
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup Id="User Interfaces"
+                 ShortId="user_interfaces"
+                 Node="Basic">
+        <ConfigGroup Id="User Events"
+                     ShortId="user_events"
+                     Node="Array">
+        </ConfigGroup>
+        <ConfigGroup Id="Tones"
+                     ShortId="tones"
+                     Node="Basic">
+            <ConfigGroup Id="Event Tones"
+                         ShortId="event_tones"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="Audio Prompts"
+                     ShortId="audio_prompts"
+                     Node="Basic">
+            <ConfigGroup Id="Generate"
+                         ShortId="generate"
+                         Node="AudioPrompts">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="Buttons"
+                     ShortId="buttons"
+                     Node="Basic">
+            <ConfigGroup Id="Translation"
+                         ShortId="translation"
+                         Node="Array">
+            </ConfigGroup>
+            <ConfigGroup Id="Sequence Configuration"
+                         ShortId="sequence_configuration"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="LED"
+                     ShortId="led"
+                     Node="Basic">
+            <ConfigGroup Id="States"
+                         ShortId="states"
+                         Node="Array">
+            </ConfigGroup>
+            <ConfigGroup Id="Events"
+                         ShortId="events"
+                         Node="Array">
+            </ConfigGroup>
+            <ConfigGroup Id="Filters"
+                         ShortId="filters"
+                         Node="Array">
+            </ConfigGroup>
+            <ConfigGroup Id="Tri Colour LED Settings"
+                         ShortId="tri_colour_led_settings"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup Id="GAIA"
+                 ShortId="gaia"
+                 Node="Basic">
+    </ConfigGroup>
+
+    <ConfigGroup Id="Advanced Settings that were an Expert Node"
+                 ShortId="advanced_settings"
+                 Node="Basic">
+        <ConfigGroup Id="Session Data"
+                     ShortId="session_data"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="BT Radio Key"
+                     ShortId="bt_radio_key"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="Simple Speech Recognition Key"
+                     ShortId="simple_speech_recognition_key"
+                     Node="Basic">
+            <ConfigGroup Id="SLC"
+                         ShortId="slc"
+                         Node="Basic">
+            </ConfigGroup>
+            <ConfigGroup Id="SCO"
+                         ShortId="sco"
+                         Node="Basic">
+            </ConfigGroup>
+        </ConfigGroup>
+        <ConfigGroup Id="FM Radio Key"
+                     ShortId="fm_radio_key"
+                     Node="Basic">
+        </ConfigGroup>
+        <ConfigGroup Id="User Tones Key"
+                     ShortId="user_tones_key"
+                     Node="Array">
+        </ConfigGroup>
+        <ConfigGroup Id="AT Commands Key"
+                     ShortId="at_commands_key"
+                     Node="Basic">
+            <ConfigGroup Id="Event to AT Command Mapping"
+                         ShortId="event_to_at_command_mapping"
+                         Node="Array">
+            </ConfigGroup>
+            <ConfigGroup Id="Command Data"
+                         ShortId="command_data"
+                         Node="Array">
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+    
+    <!-- Set of ConfigGroupPath targets for each ConfigItem type and a ConfigStruct -->
+    <ConfigGroup Id="Level 1" ShortId="level_1" Node="Basic">
+        <ConfigGroup Id="Level 2" ShortId="level_2" Node="Basic">
+            <ConfigGroup Id="Level 3" ShortId="level_3" Node="Basic">
+                <ConfigGroup Id="Target For Uint" ShortId="target_for_uint" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Int" ShortId="target_for_int" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Ulong" ShortId="target_for_ulong" Node="Basic">
+                </ConfigGroup>                
+                <ConfigGroup Id="Target For Bool" ShortId="target_for_bool" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Enum" ShortId="target_for_enum" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Bitfield" ShortId="target_for_bitfield" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For String" ShortId="target_for_string" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Pattern Array" ShortId="target_for_array" Node="Array">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Embedded Struct" ShortId="target_for_struct" Node="Basic">
+                </ConfigGroup>
+                <ConfigGroup Id="Target For Embedded Struct Parts" ShortId="target_for_struct_parts" Node="Basic">
+                </ConfigGroup>
+            </ConfigGroup>
+        </ConfigGroup>
+    </ConfigGroup>
+    
+    <ConfigGroup Id="Nesting 1" ShortId="n1_0_0" Node="Basic">
+        <ConfigGroup Id="Nesting 1.1" ShortId="n1_1_0" Node="Basic">
+            <ConfigGroup Id="Nesting 1.1.1" ShortId="n1_1_1" Node="Basic"/>
+            <ConfigGroup Id="Nesting 1.1.2" ShortId="n1_1_2" Node="Basic"/>
+            <ConfigGroup Id="Nesting 1.1.3" ShortId="n1_1_3" Node="Basic"/>
+        </ConfigGroup>
+        <ConfigGroup Id="Nesting 1.2" ShortId="n1_2_0" Node="Basic">
+            <ConfigGroup Id="Nesting 1.2.1" ShortId="n1_2_1" Node="Basic"/>
+            <ConfigGroup Id="Nesting 1.2.2" ShortId="n1_2_2" Node="Basic"/>
+            <ConfigGroup Id="Nesting 1.2.3" ShortId="n1_2_3" Node="Basic"/>
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup Id="Nesting 2" ShortId="n2_0_0" Node="Basic">
+        <ConfigGroup Id="Nesting 2.1" ShortId="n2_1_0" Node="Basic">
+            <ConfigGroup Id="Nesting 2.1.1" ShortId="n2_1_1" Node="Basic"/>
+            <ConfigGroup Id="Nesting 2.1.2" ShortId="n2_1_2" Node="Basic"/>
+            <ConfigGroup Id="Nesting 2.1.3" ShortId="n2_1_3" Node="Basic"/>
+        </ConfigGroup>
+        <ConfigGroup Id="Nesting 2.2" ShortId="n2_2_0" Node="Basic">
+            <ConfigGroup Id="Nesting 2.2.1" ShortId="n2_2_1" Node="Basic"/>
+            <ConfigGroup Id="Nesting 2.2.2" ShortId="n2_2_2" Node="Basic"/>
+            <ConfigGroup Id="Nesting 2.2.3" ShortId="n2_2_3" Node="Basic"/>
+        </ConfigGroup>
+    </ConfigGroup>
+    <ConfigGroup Id="Nesting 3" ShortId="n3_0_0" Node="Basic">
+        <ConfigGroup Id="Nesting 3.1" ShortId="n3_1_0" Node="Basic">
+            <ConfigGroup Id="Nesting 3.1.1" ShortId="n3_1_1" Node="Basic"/>
+            <ConfigGroup Id="Nesting 3.1.2" ShortId="n3_1_2" Node="Basic"/>
+            <ConfigGroup Id="Nesting 3.1.3" ShortId="n3_1_3" Node="Basic"/>
+        </ConfigGroup>
+        <ConfigGroup Id="Nesting 3.2" ShortId="n3_2_0" Node="Basic">
+            <ConfigGroup Id="Nesting 3.2.1" ShortId="n3_2_1" Node="Basic"/>
+            <ConfigGroup Id="Nesting 3.2.2" ShortId="n3_2_2" Node="Basic"/>
+            <ConfigGroup Id="Nesting 3.2.3" ShortId="n3_2_3" Node="Basic"/>
+        </ConfigGroup>
+    </ConfigGroup>
+
+</GlobalData>

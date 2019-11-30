@@ -1,0 +1,628 @@
+<ModuleData Name="Source_private_data">
+    <DefineGroup>
+		<DefinePattern PatternName="lp power table"
+                       ShortId="lp_power_table">
+            <ConfigItem
+                Id="Power States"
+                ShortId="power_states"
+                Desc=" The power mode, see #lp_power_mode ."
+                Type="enum"
+                Size="3">
+                <enum key="lp active"
+                      value="0"/>
+                <enum key="lp sniff"
+                      value="1"/>
+				<enum key="lp passive"
+					  value="2"/>
+			</ConfigItem>
+            <ConfigItem
+                Id="Min Interval"
+                ShortId="min_interval"
+                Desc="! Sniff minimum interval. Time = N x 0.625, Range 0x0002 (1.25 msec) to 0xFFFE (40.9), only even values are valid. Only used if lp_power_mode is lp_sniff. "
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Max Interval"
+                ShortId="max_interval"
+                Desc="! Sniff maximum interval. Time = N x 0.625, Range 0x0002 (1.25 msec) to 0xFFFE (40.9 sec), only even values are valid. Only used if lp_power_mode is lp_sniff."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="attempt"
+                ShortId="attempt"
+                Desc="!Number of Baseband receive slots for sniff attempt. Length = N * 1.25 msec, Range 0x0001 (1.25 msec) to 0x7FFF (40.9 sec) Only used if lp_power_mode is lp_sniff."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="timeout"
+                ShortId="timeout"
+                Desc="! Number of Baseband receive slots for sniff timeout. Length = N * 1.25 msec, Range 0x0000 (0 msec) to 0x7FFF (40.9 sec) Only used if lp_power_mode is lp_sniff. "
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="time"
+                ShortId="time"
+                Desc="!  The time spent in this state of the power table, in seconds. This must be 0 for the last entry in the table."
+                Type="uint"
+                Size="16"/>
+        </DefinePattern>
+        <DefineStruct
+            Id= "SourcePrivateData_timer"
+            ShortId="sourcedata_timer">
+            <ConfigItem
+                Id="Inquiry State [s]"
+                ShortId="InquiryState_s"
+                Desc="Time to remain in inquiry state, in seconds. The maximum value, 65535, indicates to remain forever."
+                Type="uint"
+                Size="16" />
+            <ConfigItem
+                Id="Inquiry Idle [s]"
+                ShortId="InquiryIdle_s"
+                Desc="Time to remain connectable/discoverable after inquiry state, in seconds. The maximum value, 65535, indicates to remain forever."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Discover State [s]"
+                ShortId="DiscoveryState_s"
+                Desc="Time to remain in discoverable state whenever enter to discoverable mode is triggered via button press, in seconds. The maximum value, 65535, indicates to remain forever."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Connection Idle [s]"
+                ShortId="ConnectionIdle_s"
+                Desc="Time to remain connectable after a failed connection attempt state, in seconds. The maximum value, 65535, indicates to remain forever."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Disconnect Idle [s]"
+                ShortId="DisconnectIdle_s"
+                Desc="Time to remain connectable after disconnection, before restarting the connection sequence, in seconds. The maximum value, 65535, indicates to remain forever."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Profile Connection Delay [s]"
+                ShortId="ProfileConnectionDelay_s"
+                Desc="Time to wait before connecting the next profile when the remote device has initiated the connection, in milliseconds"
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Link Loss Reconnect Delay [s]"
+                ShortId="LinkLossReconnectDelay_s"
+                Desc="Time to wait before reconnecting after a link loss. This can be set to be less than the Disconnect Idle Time if a quicker reconnection is required. In seconds. The maximum value, 65535, indicates to wait forever."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Audio Delay [ms]"
+                ShortId="AudioDelay_ms"
+                Desc="Time to wait before connecting audio (which is applied in several cases)."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Power On Connect Idle [s]"
+                ShortId="PowerOnConnectIdle_s"
+                Desc="Time to wait after power on, before initiating the first connection. The maximum value, 65535, can be used to never initiate a connection."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Power On Discover Idle [s]"
+                ShortId="PowerOnDiscoverIdle_s"
+                Desc="Time to wait on power on, before initiating the first discovery. The maximum value, 65535, can be used to never initiate discovery from power on."
+                Type="uint"
+                Size="16"/>
+            <ConfigItem
+                Id="Authenticated Payload Timeout [s]"
+                ShortId="AuthenticatedPayloadTO_s"
+                Desc="The Authenticated_Payload_Timeout configuration parameter allows the Host to configure the maximum interval between packets containing a MIC received from the remote device when AES-CCM encryption is enabled. For HFP,the Authenticated Payload Timeout should be less than or equal to 10s if Secure connection is used.Time = N * 10 msec "
+                Type="uint"
+                Size="16"/>
+        </DefineStruct>
+		
+		<DefineStruct
+            Id= "Dual Stream 2nd Device Bluetooth Address"
+            ShortId="Bluetooth_Address">
+             <ConfigItem
+                Id="NAP"
+                ShortId="NAP"
+				Desc="."
+                Type="uint"
+				PresentHex="true"
+                Size="16" />
+             <ConfigItem
+                Id="UAP"
+                ShortId="UAP"
+				Desc="."
+                Type="uint"
+				PresentHex="true"
+                Size="8" />
+            <ConfigItem
+                Id="LAP"
+                ShortId="LAP"
+				Desc="."
+                Type="ulong"
+				PresentHex="true"
+                Size="32"/>
+		</DefineStruct>
+
+        <DefineStruct
+            Id="Remote Device address Configurations"
+            ShortId="Remote_Device_Address" >
+             <ConfigItem
+                Id="BD Address NAP"
+                ShortId="NAP"
+				Desc="."
+                Type="uint"
+				PresentHex="true"
+                Size="16" />
+             <ConfigItem
+                Id="BD Address UAP"
+                ShortId="UAP"
+				Desc="."
+                Type="uint"
+				PresentHex="true"
+                Size="8" />
+            <ConfigItem
+                Id="BD Address LAP"
+                ShortId="LAP"
+				Desc="."
+                Type="ulong"
+				PresentHex="true"
+                Size="32"/>
+        </DefineStruct>
+
+    </DefineGroup>
+	
+    <!--Config Group for sink data read only structure-->
+    <ConfigGroup
+        Id="SourcePrivateData"
+        ShortId="sourcedata_readonly"
+        Node="Basic">
+        <ConfigStruct
+            Id="Source Private Data Timers"
+            ShortId="private_data_timers"
+            Desc="Source Private Data Timers"
+            Type="struct"
+            Struct="sourcedata_timer">
+            <StructElementConfigItem
+                Id="Inquiry State [s]"
+                ShortId="InquiryState_s"
+                Desc="Time to remain in inquiry state, in seconds. The maximum value, 65535, indicates to remain forever."
+                DefaultValue="0x001E"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Inquiry Idle [s]"
+                ShortId="InquiryIdle_s"
+                Desc="Time to remain connectable/discoverable after inquiry state, in seconds. The maximum value, 65535, indicates to remain forever."
+                DefaultValue="0x000A"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Discovery State [s]"
+                ShortId="DiscoveryState_s"
+                Desc="Time to remain in discoverable state whenever enter to discoverable mode is triggered via button press, in seconds. The maximum value, 65535, indicates to remain forever."
+                DefaultValue="0x0014"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Connection Idle [s]"
+                ShortId="ConnectionIdle_s"
+                Desc="Time to remain connectable after a failed connection attempt state, in seconds. The maximum value, 65535, indicates to remain forever."
+                DefaultValue="0x000A"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Disconnect Idle [s]"
+                ShortId="DisconnectIdle_s"
+                Desc="Time to remain connectable after disconnection, before restarting the connection sequence, in seconds. The maximum value, 65535, indicates to remain forever."
+                DefaultValue="0x000A"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Profile Connection Delay [s]"
+                ShortId="ProfileConnectionDelay_s"
+                Desc="Time to wait before connecting the next profile when the remote device has initiated the connection, in milliseconds."
+                DefaultValue="0x03E8"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Link Loss Reconnect Delay [s]"
+                ShortId="LinkLossReconnectDelay_s"
+                Desc="Time to wait before reconnecting after a link loss. This can be set to be less than the Disconnect Idle Time if a quicker reconnection is required. In seconds. The maximum value, 65535, indicates to wait forever."
+                DefaultValue="0x0005"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Audio Delay [s]"
+                ShortId="AudioDelay_ms"
+                Desc="Time to wait before connecting audio (which is applied in several cases)."
+                DefaultValue="0x0BB8"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Power On Connect Idle [s]"
+                ShortId="PowerOnConnectIdle_s"
+                Desc="Time to wait after power on, before initiating the first connection. The maximum value, 65535, can be used to never initiate a connection."
+                DefaultValue="0x0000"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Power On Discover Idle [s]"
+                ShortId="PowerOnDiscoverIdle_s"
+                Desc="Time to wait on power on, before initiating the first discovery. The maximum value, 65535, can be used to never initiate discovery from power on."
+                DefaultValue="0x0000"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+            <StructElementConfigItem
+                Id="Authenticated Payload Timeout"
+                ShortId="AuthenticatedPayloadTO_s"
+                Desc="The Authenticated_Payload_Timeout configuration parameter allows the Host to configure the maximum interval between packets containing a MIC received from the remote device when AES-CCM encryption is enabled. For HFP,the Authenticated Payload Timeout should be less than or equal to 10s if Secure connection is used.Time = N * 10 msec "
+                DefaultValue="0x03E8"
+                ConfigGroupPath="./[@ShortId='system']/[@ShortId='timers']"/>
+        </ConfigStruct>
+
+        <ConfigItem
+            Id="Reconnect on Panic"
+            ShortId="ReconnectOnPanic"
+            Desc="Determines which policy the source should use to choose which device to connect to."
+            Type="enum"
+            Size="3"
+            DefaultValue="Connect to last device."
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='reconnection']">
+            <enum key="Connect to last device."
+                  value="0"/>
+            <enum key="Iterate through PDL"
+                  value="1"/>
+            <enum key="Unassigned"
+                  value="2"/>
+		</ConfigItem>
+        <ConfigItem
+            Id="Combined Maximum Connection Retries"
+            ShortId="CombMaxContRetries"
+            Desc="Maximum number of reconnection attempts by the source for all profiles."
+            Type="uint"
+            Size="16"
+            DefaultValue="0xFFFF"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='reconnection']"/>
+    </ConfigGroup>
+
+	 <ConfigGroup
+        Id="Source connection and pairing"
+        ShortId="Source_pairing_writable"
+        Node="Basic"
+        ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='br_edr_profiles']/[@ShortId='hfp']">
+        <ConfigItem
+            Id="Number of PIN codes"
+            ShortId="NumOfPinCodes"
+            Desc="Number of PIN codes."
+            Type="uint"
+            Size="3"
+            DefaultValue="4"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']"/>
+        <ConfigItem
+            Id="PIN Code 1"
+            ShortId="PIN_Code1"
+            Desc="."
+            ValidChars="[a-zA-Z0-9#*+]"
+            Type="AsciiString"
+            DefaultValue="0000"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']"
+            MaxStrLenBytes="8"/>
+        <ConfigItem
+            Id="PIN Code 2"
+            ShortId="PIN_Code2"
+            Desc="."
+            ValidChars="[a-zA-Z0-9#*+]"
+            Type="AsciiString"
+            DefaultValue="1111"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']"
+            MaxStrLenBytes="8"/>
+        <ConfigItem
+            Id="PIN Code 3"
+            ShortId="PIN_Code3"
+            Desc="."
+            ValidChars="[a-zA-Z0-9#*+]"
+            Type="AsciiString"
+            DefaultValue="1234"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']"
+            MaxStrLenBytes="8"/>
+        <ConfigItem
+            Id="PIN Code 4"
+            ShortId="PIN_Code4"
+            Desc="."
+            ValidChars="[a-zA-Z0-9#*+]"
+            Type="AsciiString"
+            DefaultValue="8888"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']"
+            MaxStrLenBytes="8"/>
+    </ConfigGroup>
+
+    <ConfigGroup
+        ShortId="source_Input_Output_readonly"
+        Id="source Input Output readonly"
+        Node="Basic">
+        <ConfigItem
+            Id="SPDIF Input PIO"
+            ShortId="spdif_pio"
+            Type="enum"
+            DefaultValue=" "
+            Size="16"
+            Desc="This configures a PIO to be used for SPDIF input, this is required for CSR8675 and must be an odd number. This should be disabled for CSR8670 (SPDIF will still function)"
+            ConfigGroupPath="./[@ShortId='input_output']/[@ShortId='input_pios']">
+            <BuildVariant HwVariant="CNS10001v4"
+                          SwVariant="All"
+                          Value="Unassigned"/>
+            <BuildVariant HwVariant="H13179v2_H13478v2"
+                          SwVariant="All"
+                          Value="PIO 17"/>
+            <enum key="PIO 0"
+                  value="0"/>
+            <enum key="PIO 1"
+                  value="1"/>
+            <enum key="PIO 2"
+                  value="2"/>
+            <enum key="PIO 3"
+                  value="3"/>
+            <enum key="PIO 4"
+                  value="4"/>
+            <enum key="PIO 5"
+                  value="5"/>
+            <enum key="PIO 6"
+                  value="6"/>
+            <enum key="PIO 7"
+                  value="7"/>
+            <enum key="PIO 8"
+                  value="8"/>
+            <enum key="PIO 9"
+                  value="9"/>
+            <enum key="PIO 10"
+                  value="10"/>
+            <enum key="PIO 11"
+                  value="11"/>
+            <enum key="PIO 12"
+                  value="12"/>
+            <enum key="PIO 13"
+                  value="13"/>
+            <enum key="PIO 14"
+                  value="14"/>
+            <enum key="PIO 15"
+                  value="15"/>
+            <enum key="PIO 16"
+                  value="16"/>
+            <enum key="PIO 17"
+                  value="17"/>
+            <enum key="PIO 18"
+                  value="18"/>
+            <enum key="PIO 19"
+                  value="19"/>
+            <enum key="PIO 20"
+                  value="20"/>
+            <enum key="PIO 21"
+                  value="21"/>
+            <enum key="PIO 22"
+                  value="22"/>
+            <enum key="PIO 23"
+                  value="23"/>
+            <enum key="PIO 24"
+                  value="24"/>
+            <enum key="PIO 25"
+                  value="25"/>
+            <enum key="PIO 26"
+                  value="26"/>
+            <enum key="PIO 27"
+                  value="27"/>
+            <enum key="PIO 28"
+                  value="28"/>
+            <enum key="PIO 29"
+                  value="29"/>
+            <enum key="PIO 30"
+                  value="30"/>
+            <enum key="PIO 31"
+                  value="31"/>
+            <enum key="Disable"
+                  value="32"/>
+            <enum key="Always Detect"
+                  value="33"/>
+            <enum key="Unassigned"
+                  value="34"/>
+        </ConfigItem>
+    </ConfigGroup>
+
+	<ConfigGroup
+        Id="Source Audio Type"
+        ShortId="source_audio_type"
+        Node="Basic">
+        <ConfigItem
+            Id="Input Source"
+            ShortId="Input_Source"
+            ConfigGroupPath="./[@ShortId='audio']/[@ShortId='Input_type']"
+            Desc="Configure the audio input source."
+            Type="enum"
+            DefaultValue="USB"
+            Size="3">
+            <enum key="USB"
+                  value="0"/>
+            <enum key="Analogue"
+                  value="1"/>
+            <enum key="SPDIF"
+                  value="2"/>
+            <enum key="I2S"
+                  value="3"/>
+          <enum key="Unassigned"
+                  value="4"/>
+        </ConfigItem>
+        <ConfigItem
+            Id="Digital Input Bits per sample"
+            ShortId="featuresDigitalInputBitsPerSample"
+			Type="enum"
+			ConfigGroupPath="./[@ShortId='audio']/[@ShortId='Input_type']"
+            Desc="Bits per sample when using I2S or SPDIF input sources"
+			DefaultValue="16 bits per sample"
+            Size="5">
+            <enum key="16 bits per sample"
+                  value="16"/>
+            <enum key="24 bits per sample"
+                  value="24"/>
+            <enum key="32 bits per sample"
+                  value="32"/>
+            <enum key="Unassigned"
+                  value="0"/>
+        </ConfigItem>
+    </ConfigGroup>
+	
+	<ConfigGroup
+        Id="Secure Connection Modes"
+        ShortId="secure_connection_modes"
+        Node="Expert">
+        <ConfigItem
+            Id="BT 2.1 man in the middle"
+            ShortId="man_in_the_middle"
+            Desc="This configures a PIO to detect whether the aux output is connected at power on. If configured this will mute the main output and un-mute the aux output on power on. If disabled all outputs will be un-muted at power on. This should be used in conjunction with main/aux mute events to mute the main output when aux output is connected."
+            Type="bool"
+            DefaultValue="false"
+            Size="1"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']">
+        </ConfigItem>
+        <ConfigItem
+            Id="secure connection mode"
+            ShortId="secure_connection_mode"
+			Type="enum"
+			ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='connection_management']/[@ShortId='pairing']"
+            Desc=" "
+			DefaultValue="source no secure connection"
+            Size="2">
+            <enum key="source no secure connection"
+                  value="0"/>
+            <enum key="source secure connection mode"
+                  value="1"/>
+			<enum key="source secure connection only mode"
+                  value="2"/>
+        </ConfigItem>
+    </ConfigGroup>
+	
+	<ConfigGroup
+        Id="Number Of Paired Devices"
+        ShortId="Number_Of_Paired_Devices"
+        Node="Expert">
+        <ConfigItem
+            Id="number of paired devices"
+            ShortId="number_of_paired_devices"
+            Desc="This configures a PIO to detect whether the aux output is connected at power on. If configured this will mute the main output and un-mute the aux output on power on. If disabled all outputs will be un-muted at power on. This should be used in conjunction with main/aux mute events to mute the main output when aux output is connected."
+            Type="uint"
+            DefaultValue="8"
+            Size="8">
+        </ConfigItem>
+    </ConfigGroup>
+	
+	<ConfigGroup
+        Id="Source Dual Stream"
+        ShortId="Source_Dual_Stream"
+        Node="Basic">
+		<ConfigGroup
+			ShortId="Bluetooth_Device_Address"
+			Id="Dual Stream 2nd Device Bluetooth Device Address configuration"
+			Node="Basic">
+			<ConfigStruct
+				Id="Instance of a structure Bluetooth_Address"
+				ShortId="Bluetooth_Address"
+				Desc="Use of a structure Bluetooth_Address"
+				Type="struct"
+				Struct="Bluetooth_Address">
+				<StructElementConfigItem
+					Id="NAP"
+					ShortId="nap"
+					ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Dual_Stream']/[@ShortId='DualStream_2nd_Device_Bluetooth_Address']"
+					Desc=" "
+					DefaultValue="0x0000" />	
+				<StructElementConfigItem
+					Id="UAP"
+					ShortId="uap"
+					ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Dual_Stream']/[@ShortId='DualStream_2nd_Device_Bluetooth_Address']"
+					Desc=" " 
+					DefaultValue="0x0000" />
+				<StructElementConfigItem
+					Id="LAP"
+					ShortId="lap"
+					ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Dual_Stream']/[@ShortId='DualStream_2nd_Device_Bluetooth_Address']"
+					Desc=" "
+					DefaultValue="0x0000" />
+			</ConfigStruct>
+		</ConfigGroup>
+		
+        <ConfigItem
+            Id="Enable Dual Stream"
+            ShortId="Enable_Dual_Stream"
+            Desc="Enable the DualStream feature."
+            Type="bool"
+            Size="1"
+            DefaultValue="true"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Dual_Stream']"/>
+        <ConfigItem
+            Id="Connect both Devices"
+            ShortId="Connect_both_Devices"
+            Desc="Determines if the source application should attempt to connect to the second device after connection to the first device has completed."
+            Type="bool"
+            Size="1"
+            DefaultValue="true"
+            ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Dual_Stream']"/>
+    </ConfigGroup>
+
+    <ConfigGroup
+        ShortId="Remote_Device_Address"
+        Id="Remote Device Address Config Data"
+        Node="Basic">
+        <ConfigStruct
+            Id="Instance of a structure Remote_Device_Address"
+            ShortId="Device_Address"
+            Desc="Use of a structure Remote_Device_Address"
+            Type="struct"
+            Struct="Remote_Device_Address">
+			<StructElementConfigItem
+                Id="Remote Device BD Address NAP"
+                ShortId="struct_bd_address_nap"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='Remote_Device_Bluetooth_Address']"
+                Desc=" "
+                DefaultValue="0x0000" />
+            <StructElementConfigItem
+                Id="Remote Device BD Address UAP"
+                ShortId="struct_bd_address_uap"
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='Remote_Device_Bluetooth_Address']"
+                Desc=" " 
+                DefaultValue="0x0000" />
+            <StructElementConfigItem
+                Id="Remote Device BD Address LAP"
+                ShortId="struct_bd_address_lap"				
+				ConfigGroupPath="./[@ShortId='bluetooth']/[@ShortId='Profiles']/[@ShortId='Remote_Device_Bluetooth_Address']"
+                Desc=" "
+                DefaultValue="0x0000" />
+        </ConfigStruct>	
+	</ConfigGroup>
+	<ConfigGroup
+        Id="SOURCE POWER TABLE"
+        ShortId="source_power_table"
+        Node="Expert">
+		<ConfigGroup
+			Id="power table structure"
+			ShortId="power_table_structure"
+			Node="Array">
+			<ConfigPatternArray
+				Id="Source Power Table structure"
+				ShortId="power_table"
+				Pattern="lp_power_table"
+				FixedNumPatterns="1">
+					<PatternArrayRow
+						Id="source_power_table_1"
+						ShortId="source_power_table_1"
+						Node="Basic">
+						<PatternArrayConfigItem
+							ShortId="Power_States_1"
+							DefaultValue="lp active"/>
+						<PatternArrayConfigItem
+							ShortId="Min_Interval_1"
+							DefaultValue="0x00" />
+						<PatternArrayConfigItem
+							ShortId="Max_Interval_1"
+							DefaultValue="0x00" />
+						<PatternArrayConfigItem
+							ShortId="attempt_1"
+							DefaultValue="0x00" />
+						<PatternArrayConfigItem
+							ShortId="timeout_1"
+							DefaultValue="0x00" />
+						<PatternArrayConfigItem
+							ShortId="time_1"
+							DefaultValue="0x00" />
+					</PatternArrayRow>
+			</ConfigPatternArray>
+		</ConfigGroup>
+    </ConfigGroup>	
+</ModuleData>

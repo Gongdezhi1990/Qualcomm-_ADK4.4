@@ -1,0 +1,9 @@
+ \
+ connection/no_ble/BlueLab-7.4-Release/assisted/dm_ble_set_connection_parameters.o:  \
+ connection/dm_ble_set_connection_parameters.c \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h \
+  C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/firmware/bdaddr_.h:
+
+C:/qtil/ADK_CSR867x.WIN.4.4.0.17/tools/include/standard/csrtypes.h:

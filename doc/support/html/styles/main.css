@@ -1,0 +1,120 @@
+
+/* CSR Tech Comms HTML Index Page */
+/* Copyright (c) 2011 - 2018 Qualcomm Technologies International, Ltd. */
+/* All Rights Reserved. */
+/* Qualcomm Technologies International, Ltd. Confidential and Proprietary. */
+
+h1 {
+	border-bottom: 1px solid #888888;
+	padding-bottom: 7px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #333333; }
+
+h2 {
+	border-bottom: 1px dotted #888888;
+	padding-top: 11px;
+	padding-bottom: 7px;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #666666; }
+
+h3 {
+	padding-top: 11px;
+	padding-bottom: 7px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #666666; }
+
+p {
+	font-family: Helvetica, Arial, sans-serif;
+	padding-bottom: 7px;
+	font-size: 12px;
+	font-style: normal;
+	color: #000000; }
+
+td {
+	font-family: Helvetica, Arial, sans-serif;
+	padding-bottom: 0px;
+	font-size: 12px;
+	font-style: normal;
+	color: #000000; }
+
+li {	margin-top: 3px;}
+
+p.list-graphic {
+	margin-bottom: 17px;
+	margin-left: -30px;
+}
+
+
+
+a {color:#3A75C4;}
+a:link {text-decoration: none}
+a:visited {text-decoration: none}
+a:active {text-decoration: none}
+a:hover {border-bottom: 1px dotted;}
+
+
+td.bordered, table.bordered {
+	
+    border-color: #333333;
+    border-width: 1px;
+    border-style: solid;
+}
+
+
+
+/* stuff you'll find in the footer area */
+
+td.footerText {
+	font-family:Verdana,Arial;
+	font-size:9px;
+	color:#cccccc;
+	padding-bottom: 0px;
+	
+}
+
+a.footerLink {font-family:Verdana,Arial; font-size:9px; color:#ffffff;}
+a.footerLink:link {text-decoration: none}
+a.footerLink:visited {text-decoration: none}
+a.footerLink:active {text-decoration: none}
+a.footerLink:hover {text-decoration: none;}
+
+/* For CSRTreeMenuV2 */
+
+.treeview ul{ 
+margin: 0;
+padding: 0;
+}
+
+.treeview li{ /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+background: url(../img/docNav.gif) no-repeat left center;
+list-style-type: none;
+padding-left: 22px;
+margin-bottom: 3px;
+}
+
+.treeview li.submenu{ /* Style for LI that contains sub lists (other ULs). */
+background: url(../img/plusNav.gif) no-repeat left 1px;
+cursor: hand !important;
+cursor: pointer !important;
+}
+
+
+.treeview li.submenu ul{ /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+}
+
+.treeview .submenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+}

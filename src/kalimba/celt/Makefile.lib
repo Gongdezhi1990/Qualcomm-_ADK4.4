@@ -1,0 +1,58 @@
+asm_files = celt.asm \
+celt_dec.asm \
+celt_enc.asm \
+bands_processing.asm \
+compute_allocation.asm \
+decode_flags.asm \
+decoder_init.asm \
+deemphasis.asm \
+encode_flags.asm \
+encoder_init.asm \
+frame_decode.asm \
+frame_encode.asm \
+get_bits.asm \
+imdct_nonradix2.asm \
+imdct_radix2.asm \
+imdct_window_overlapadd.asm \
+laplace.asm \
+math_functions.asm \
+mdct_analysis.asm \
+mdct_nonradix2.asm \
+mdct_radix2.asm \
+mode_objects.asm \
+pitch.asm \
+plc.asm \
+preemphasis.asm \
+put_bits.asm \
+quant_bands.asm \
+range_dec.asm \
+range_enc.asm \
+rate.asm \
+segments.asm \
+transient_process.asm \
+unquant_bands.asm \
+vq.asm \
+window_reshuffle.asm
+
+
+header_files = celt_library.h \
+celt_decoder.h \
+celt_encoder.h \
+celt.h \
+celt_macros.h \
+celt_macros_kalasm2.h \
+celt_macros_kalasm3.h \
+celt_modes.h
+
+
+
+$(eval $(call header_rules,$(header_files)))
+
+$(eval $(call rules,$(asm_files)))
+
+# one line per variant...
+$(eval $(call rules_variant,debug,$(FL_DEBUG),$(asm_files)))
+$(foreach hw,$(KAL_BASE_REG_CORES), \
+  $(eval $(call rules_variant_core,base_regs,$(FL_BASE_REG),$(asm_files),$(hw))) \
+)
+
